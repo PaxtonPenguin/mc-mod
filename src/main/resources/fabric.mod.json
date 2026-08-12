@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "catears",
+	"version": "${version}",
+	"name": "Cat Ears",
+	"description": "This mod adds Cat Ears.",
+	"authors": [
+		"PaxtonPenguin"
+	],
+	"contact": {
+		"homepage": "https://paxtonpenguin.com/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/cat-ears/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"paxton.catears.CatEars"
+		],
+		"client": [
+			"paxton.catears.client.CatEarsClient"
+		]
+	},
+	"mixins": [
+		"cat-ears.mixins.json",
+		{
+			"config": "cat-ears.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
