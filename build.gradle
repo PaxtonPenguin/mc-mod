@@ -45,6 +45,7 @@ dependencies {
 	//mappings "net.fabricmc:yarn:${project.yarn_mappings}"
 	
 	implementation "com.geckolib:geckolib-fabric-26.2:5.5.3"
+	implementation 'javax:javaee-api:8.0'
 }
 
 processResources {

@@ -1,4 +1,7 @@
 {
   "item.cat-ears.cat_ears": "Cat Ears",
-  "creativeTab.cat-ears": "Cat Ears"
+  "creativeTab.cat-ears": "Cat Ears",
+  "item.cat-ears.orb": "Mysterious Orb",
+  "item.cat-ears.dark_orb": "Mysterious Orb",
+  "item.cat-ears.fop_orb": "Mysterious Orb"
 }
