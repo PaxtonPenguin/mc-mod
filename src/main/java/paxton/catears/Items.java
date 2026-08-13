@@ -11,6 +11,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.core.Registry;
 import java.util.function.Function;
+
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 
@@ -27,14 +28,24 @@ public class Items {
 
     //public static final Item CAT_EARS = register(ItemIds.CAT_EARS, Item::new, new Item.Properties());
 
+	//public static final Item ORB = register(ItemIds.ORB, Item::new, new Item.Properties());
+
+	public static final Item ORB = register(
+		ItemIds.ORB,
+		Item::new,
+		new Item.Properties().food(Orb.ORB_COMPONENT, Orb.ORB_CONSUMABLE_COMPONENT)
+	);
+	
 	public static final ResourceKey<CreativeModeTab> CUSTOM_CREATIVE_TAB_KEY = ResourceKey.create(
 		BuiltInRegistries.CREATIVE_MODE_TAB.key(), Identifier.fromNamespaceAndPath("cat-ears", "creative_tab")
-);
+	);
+
 	public static final CreativeModeTab CUSTOM_CREATIVE_TAB = FabricCreativeModeTab.builder()
 		.icon(() -> new ItemStack(Items.CAT_EARS))
 		.title(Component.translatable("creativeTab.cat-ears"))
 		.displayItems((params, output) -> {
 			output.accept(Items.CAT_EARS);
+			output.accept(Items.ORB);
 		})
 		.build();
 	
