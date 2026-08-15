@@ -1,5 +1,5 @@
 {
-	"required": true,
+	"required": false,
 	"package": "paxton.catears.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [

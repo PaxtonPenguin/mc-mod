@@ -17,17 +17,9 @@
 	"entrypoints": {
 		"main": [
 			"paxton.catears.CatEars"
-		],
-		"client": [
-			"paxton.catears.client.CatEarsClient"
 		]
 	},
 	"mixins": [
-		"cat-ears.mixins.json",
-		{
-			"config": "cat-ears.client.mixins.json",
-			"environment": "client"
-		}
 	],
 	"depends": {
 		"fabricloader": ">=0.19.3",
