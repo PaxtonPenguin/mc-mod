@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 public class Orb {
     public static final Consumable ORB_CONSUMABLE_COMPONENT = Consumables.defaultFood()
 		// The duration is in ticks, 20 ticks = 1 second
-		.onConsume(CatEars.LOGGER.info("eated a orb :3"))
+		//.onConsume(CatEars.LOGGER.info("eated a orb :3"))
 		.build();
     public static final FoodProperties ORB_COMPONENT = new FoodProperties.Builder()
 		.alwaysEdible()
