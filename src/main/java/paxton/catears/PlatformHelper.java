@@ -22,7 +22,7 @@ public interface PlatformHelper {
     <T extends Entity> Supplier<EntityType<T>> registerEntity(String id, Supplier<EntityType<T>> entityType);
     <T extends BlockEntity> Supplier<BlockEntityType<T>> registerBlockEntity(String id, Supplier<BlockEntityType<T>> blockEntityType);
     <T extends Block> Supplier<T> registerBlock(String id, Function<BlockBehaviour.Properties, T> block);
-    //<T extends SoundEvent> Supplier<T> registerSound(String id, Supplier<T> sound);
+    <T extends SoundEvent> Supplier<T> registerSound(String id, Supplier<T> sound);
     <T extends CreativeModeTab> Supplier<T> registerCreativeModeTab(String id, Supplier<T> tab);
 
     CreativeModeTab.Builder newCreativeTabBuilder();

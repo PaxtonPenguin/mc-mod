@@ -27,6 +27,7 @@ public class CatEars implements ModInitializer {
 
 		LOGGER.info("Loaded, enjoy your cat ears :3");
 		Items.initialize();
+		Blocks.initialize();
 	}
 
 	public static Identifier id(String path) {

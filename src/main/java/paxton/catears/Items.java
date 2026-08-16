@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.EquipmentSlot;
 //import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.CreativeModeTab;
@@ -15,6 +16,7 @@ import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.core.Registry;
 import java.util.function.Function;
 import java.util.function.UnaryOperator;
+import net.minecraft.core.Holder;
 
 import com.google.common.base.Suppliers;
 import java.util.function.Supplier;
@@ -47,6 +49,9 @@ public class Items {
 		return CatEars.PLATFORM.registerItem(id, item);
 	}
 
+	public static final Holder<MobEffect> BECOME =
+			Registry.registerForHolder(BuiltInRegistries.MOB_EFFECT, Identifier.fromNamespaceAndPath("cat-ears", "Become"), new Become());
+
     //public static final Item CAT_EARS = register(ItemIds.CAT_EARS, Item::new, new Item.Properties());
 
 	//public static final Item ORB = register(ItemIds.ORB, Item::new, new Item.Properties());
@@ -75,6 +80,8 @@ public class Items {
 			output.accept(Items.ORB);
 			output.accept(Items.DARK_ORB);
 			output.accept(Items.FOP_ORB);
+			output.accept(Blocks.GMOD.asItem());
+			output.accept(Blocks.PEDESTAL.asItem());
 		})
 		.build();
 	
