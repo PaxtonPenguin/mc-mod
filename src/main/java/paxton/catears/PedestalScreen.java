@@ -14,6 +14,7 @@ public class PedestalScreen extends AbstractContainerScreen<PedestalMenu>{
 		super(abstractContainerMenu, inventory, component);
 		// Center the title
 		this.titleLabelX = (this.imageWidth - this.font.width(this.title)) / 2;
+		CatEars.LOGGER.info("ran screen");
 	}
 
 	@Override

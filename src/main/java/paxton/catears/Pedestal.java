@@ -31,6 +31,7 @@ public class Pedestal extends BaseEntityBlock{
 protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
 	if (!level.isClientSide() && level.getBlockEntity(pos) instanceof PedestalEntity pedestal) {
 		player.openMenu(pedestal);
+		CatEars.LOGGER.info("opened pedestal");
 	}
 
 	return InteractionResult.SUCCESS;

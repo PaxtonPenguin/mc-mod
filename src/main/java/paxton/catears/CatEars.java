@@ -26,6 +26,7 @@ public class CatEars implements ModInitializer {
 		Blocks.initialize();
 		BlockEntities.initialize();
 		MenuTypes.initialize();
+		Screens.initialize();
 		LOGGER.info("Loaded, enjoy your cat ears :3");
 	}
 
