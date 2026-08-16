@@ -21,9 +21,12 @@ public class CatEars implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		LOGGER.info("Loaded, enjoy your cat ears :3");
+		LOGGER.info("Loading CatEar Resources...");
 		Items.initialize();
 		Blocks.initialize();
+		BlockEntities.initialize();
+		MenuTypes.initialize();
+		LOGGER.info("Loaded, enjoy your cat ears :3");
 	}
 
 	public static Identifier id(String path) {

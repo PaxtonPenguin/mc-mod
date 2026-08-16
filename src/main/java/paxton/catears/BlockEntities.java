@@ -13,7 +13,10 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
 
 public class BlockEntities {
-    private static <T extends BlockEntity> BlockEntityType<T> register(
+    public static final BlockEntityType<PedestalEntity> PEDESTAL =
+		register("pedestal", PedestalEntity::new, Blocks.PEDESTAL);
+
+	private static <T extends BlockEntity> BlockEntityType<T> register(
 		String name,
 		FabricBlockEntityTypeBuilder.Factory<? extends T> entityFactory,
 		Block... blocks
@@ -22,6 +25,7 @@ public class BlockEntities {
 	return Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, id, FabricBlockEntityTypeBuilder.<T>create(entityFactory, blocks).build());
 }
 
-    public static final BlockEntityType<PedestalEntity> PEDESTAL =
-		register("pedestal", PedestalEntity::new, Blocks.PEDESTAL);
+public static void initialize() {
+	}
+
 }

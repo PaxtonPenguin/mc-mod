@@ -47,7 +47,7 @@ protected void saveAdditional(ValueOutput output) {
 	@Override
 	@NonNull
 	public Component getDisplayName() {
-		return Component.translatable("block.example-mod.dirt_chest");
+		return Component.translatable("block.example-mod.pedestal");
 	}
 
 	@Override

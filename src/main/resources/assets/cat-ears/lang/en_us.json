@@ -3,5 +3,8 @@
   "creativeTab.cat-ears": "Cat Ears",
   "item.cat-ears.orb": "Mysterious Orb",
   "item.cat-ears.dark_orb": "Mysterious Orb",
-  "item.cat-ears.fop_orb": "Mysterious Orb"
+  "item.cat-ears.fop_orb": "Mysterious Orb",
+  "block.cat-ears.pedestal": "Pedestal",
+  "block.cat-ears.white_tuff": "White Tuff",
+  "block.cat-ears.gmod": "Missing Texture"
 }

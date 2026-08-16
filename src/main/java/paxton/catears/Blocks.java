@@ -38,7 +38,7 @@ public class Blocks {
 
     public static final Block PEDESTAL = register(
 		BlockIds.PEDESTAL,
-		Block::new,
+		Pedestal::new,
 		BlockBehaviour.Properties.of()
 );
 
