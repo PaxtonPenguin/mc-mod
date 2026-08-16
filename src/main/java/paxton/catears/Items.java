@@ -35,22 +35,21 @@ public class Items {
 		return item;
 	}
 
-	/// Register an item
-	private static <T extends Item> Supplier<T> register(String id, Function<Item.Properties, T> itemFactory) {
-		return register(id, itemFactory, UnaryOperator.identity());
+	private static <T extends Item> T register(String name, Function<Item.Properties, T> itemFactory, Item.Properties settings) {
+		ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("cat-ears", name));
+		//? if >=1.21.2 {
+		T item = itemFactory.apply(settings.setId(itemKey));
+		return Registry.register(BuiltInRegistries.ITEM, itemKey, item);
+		//?} else {
+		/*T item = itemFactory.apply(settings);
+		return Registry.register(BuiltInRegistries.ITEM, itemKey, item);
+		*///?}
 	}
 
-	/// Register an item
-	private static <T extends Item> Supplier<T> register(String id, Function<Item.Properties, T> itemFactory, UnaryOperator<Item.Properties> properties) {
-		return register(id, () -> itemFactory.apply(properties.apply(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, CatEars.id(id))))));
-	}
-
-	private static <T extends Item> Supplier<T> register(String id, Supplier<T> item) {
-		return CatEars.PLATFORM.registerItem(id, item);
-	}
+	//public static Supplier<T> register(ResourceKey<Item>)
 
 	public static final Holder<MobEffect> BECOME =
-			Registry.registerForHolder(BuiltInRegistries.MOB_EFFECT, Identifier.fromNamespaceAndPath("cat-ears", "Become"), new Become());
+			Registry.registerForHolder(BuiltInRegistries.MOB_EFFECT, Identifier.fromNamespaceAndPath("cat-ears", "become"), new Become());
 
     //public static final Item CAT_EARS = register(ItemIds.CAT_EARS, Item::new, new Item.Properties());
 
@@ -66,22 +65,23 @@ public class Items {
 		new Item.Properties().food(Orb.ORB_COMPONENT, Orb.ORB_CONSUMABLE_COMPONENT)
 	);
 	
-	public static final Supplier<cat_ears> CAT_EARS = register("cat_ears", properties -> new cat_ears(Material.INSTANCE, ArmorType.HELMET, properties));
+	public static final Item CAT_EARS = register(ItemIds.CAT_EARS, properties -> new cat_ears(Material.INSTANCE, ArmorType.HELMET, properties), new Item.Properties());
 
 	public static final ResourceKey<CreativeModeTab> CUSTOM_CREATIVE_TAB_KEY = ResourceKey.create(
 		BuiltInRegistries.CREATIVE_MODE_TAB.key(), Identifier.fromNamespaceAndPath("cat-ears", "creative_tab")
 	);
 
 	public static final CreativeModeTab CUSTOM_CREATIVE_TAB = FabricCreativeModeTab.builder()
-		.icon(() -> new ItemStack(Items.CAT_EARS.get()))
+		.icon(() -> new ItemStack(Items.CAT_EARS))
 		.title(Component.translatable("creativeTab.cat-ears"))
 		.displayItems((params, output) -> {
-			output.accept(Items.CAT_EARS.get());
+			output.accept(Items.CAT_EARS);
 			output.accept(Items.ORB);
 			output.accept(Items.DARK_ORB);
 			output.accept(Items.FOP_ORB);
 			output.accept(Blocks.GMOD.asItem());
 			output.accept(Blocks.PEDESTAL.asItem());
+			output.accept(Blocks.WHITE_TUFF.asItem());
 		})
 		.build();
 	

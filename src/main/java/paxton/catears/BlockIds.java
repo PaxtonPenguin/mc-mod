@@ -15,4 +15,6 @@ public class BlockIds {
 
     public static final BlockItemId PEDESTAL = create("pedestal");
 
+    public static final BlockItemId WHITE_TUFF = create("white_tuff");
+
 }

@@ -4,8 +4,6 @@ import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.resources.Identifier;
 
-import java.util.ServiceLoader;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,8 +14,6 @@ public class CatEars implements ModInitializer {
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-
-	public static final PlatformHelper PLATFORM = ServiceLoader.load(PlatformHelper.class).findFirst().get();
 
 	@Override
 	public void onInitialize() {
