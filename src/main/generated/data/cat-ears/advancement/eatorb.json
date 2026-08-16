@@ -1,0 +1,28 @@
+{
+  "criteria": {
+    "got_dirt": {
+      "conditions": {
+        "items": [
+          {
+            "items": "cat-ears:cat_ears"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "background": "minecraft:gui/advancements/backgrounds/adventure",
+    "description": "you're now a furry",
+    "icon": {
+      "id": "cat-ears:cat_ears"
+    },
+    "title": "meow :3"
+  },
+  "requirements": [
+    [
+      "got_dirt"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

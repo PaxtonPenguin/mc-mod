@@ -5,6 +5,7 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.*;
+import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
 
 public class Become extends MobEffect {
@@ -24,9 +25,12 @@ public class Become extends MobEffect {
 	// Called when the effect is applied.
 	@Override
 	public boolean applyEffectTick(ServerLevel level, LivingEntity entity, int amplifier) {
-		if (entity instanceof Player) {
+		if (entity instanceof Player player) {
 			((Player) entity).giveExperiencePoints(1 << amplifier); // Higher amplifier gives you experience faster
-			//Inventory.add(32, Items.CAT_EARS);
+
+			final Inventory yeah = player.getInventory();
+			
+			yeah.add(99, Items.CAT_EARS.getDefaultInstance());
 		}
 
 		return super.applyEffectTick(level, entity, amplifier);
