@@ -20,6 +20,7 @@ import net.minecraft.commands.Commands;
 import net.minecraft.server.PlayerAdvancements;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 
 
@@ -69,8 +70,12 @@ public class CatEars implements ModInitializer {
 			while (sendToChatKey.consumeClick()) {
 				if (client.player != null) {
 					//client.player.sendSystemMessage(Component.literal("Key Pressed!"));
-					if (client.player.isHolding(Items.CAT_EARS)) {
+					final EquipmentSlot slot = client.player.getEquipmentSlotForItem(Items.CAT_EARS.getDefaultInstance());
+					final String stringedslot = slot.toString();					
+					if (stringedslot == "HEAD") {
 						client.player.playSound(SoundEvents.CAT_PURREOW_BABY.value(), 2f, 0.7f);
+					} else {
+						LOGGER.info(stringedslot);
 					}
 				}
 			}
