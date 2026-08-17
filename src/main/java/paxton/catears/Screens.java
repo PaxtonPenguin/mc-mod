@@ -12,5 +12,8 @@ public class Screens implements ModInitializer {
 	}
 
 	public static void initialize() {
+		CatEars.LOGGER.info("pre init");
+		MenuScreens.register(MenuTypes.PEDESTAL, PedestalScreen::new);
+		CatEars.LOGGER.info("init pedestal");
 	}
 }

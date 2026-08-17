@@ -8,7 +8,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 
 public class PedestalScreen extends AbstractContainerScreen<PedestalMenu>{
-    private static final Identifier CONTAINER_TEXTURE = Identifier.withDefaultNamespace("textures/gui/container/dispenser.png");
+    private static final Identifier CONTAINER_TEXTURE = Identifier.fromNamespaceAndPath("cat-ears", "textures/gui/container/pedestal.png");
 
 	public PedestalScreen(PedestalMenu abstractContainerMenu, Inventory inventory, Component component) {
 		super(abstractContainerMenu, inventory, component);

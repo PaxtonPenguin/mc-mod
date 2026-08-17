@@ -3,9 +3,9 @@ package paxton.catears;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.*;
-import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
 
 public class Become extends MobEffect {
@@ -28,9 +28,9 @@ public class Become extends MobEffect {
 		if (entity instanceof Player player) {
 			((Player) entity).giveExperiencePoints(1 << amplifier); // Higher amplifier gives you experience faster
 
-			final Inventory yeah = player.getInventory();
+			player.setItemSlot(EquipmentSlot.HEAD, Items.CAT_EARS.getDefaultInstance());
 			
-			yeah.add(99, Items.CAT_EARS.getDefaultInstance());
+			//yeah.add(103, Items.CAT_EARS.getDefaultInstance());
 		}
 
 		return super.applyEffectTick(level, entity, amplifier);

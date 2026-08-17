@@ -6,5 +6,7 @@
   "item.cat-ears.fop_orb": "Mysterious Orb",
   "block.cat-ears.pedestal": "Pedestal",
   "block.cat-ears.white_tuff": "White Tuff",
-  "block.cat-ears.gmod": "Missing Texture"
+  "block.cat-ears.gmod": "Missing Texture",
+  "key.category.cat-ears.custom_category": "Cat Ears",
+  "key.cat-ears.meow": "Meow"
 }

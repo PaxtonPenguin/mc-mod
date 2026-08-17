@@ -18,8 +18,8 @@ public class PedestalMenu extends AbstractContainerMenu {
 	private static final int INVENTORY_START = CONTAINER_END;
 	private static final int INVENTORY_END = INVENTORY_START + Inventory.INVENTORY_SIZE;
 
-	private static final int CONTAINER_START_X = 62;
-	private static final int CONTAINER_START_Y = 17;
+	private static final int CONTAINER_START_X = 80;
+	private static final int CONTAINER_START_Y = 35;
 	private static final int INVENTORY_START_X = 8;
 	private static final int INVENTORY_START_Y = 84;
 

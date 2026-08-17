@@ -16,7 +16,10 @@ import com.geckolib.animatable.manager.AnimatableManager;
 import com.geckolib.util.GeckoLibUtil;
 //import org.apache.commons.lang3.mutable.MutableObject;
 import com.geckolib.renderer.GeoArmorRenderer;
+import com.geckolib.renderer.GeoItemRenderer;
+
 import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
+import org.jetbrains.annotations.Nullable;
 
 import net.minecraft.world.item.equipment.ArmorMaterial;
 
@@ -32,10 +35,16 @@ public class cat_ears extends Item implements GeoItem {
     	public void createGeoRenderer(Consumer<GeoRenderProvider> consumer) {
         	consumer.accept(new GeoRenderProvider() {
             	private final Supplier<GeoArmorRenderer<cat_ears, HumanoidRenderState>> renderer = Suppliers.memoize(() -> new GeoArmorRenderer<>(cat_ears.this));
+				private final Supplier<GeoItemRenderer<cat_ears>> itemrenderer = Suppliers.memoize(() -> new GeoItemRenderer<>(cat_ears.this));
 
             	@Override
-            	public GeoArmorRenderer<?, ?> getGeoArmorRenderer(ItemStack itemStack, EquipmentSlot equipmentSlot) {
+            	public @Nullable GeoArmorRenderer<?, ?> getGeoArmorRenderer(ItemStack itemStack, EquipmentSlot equipmentSlot) {
                 	return this.renderer.get();
+            	}
+
+				@Override
+           		public @Nullable GeoItemRenderer<cat_ears> getGeoItemRenderer() {
+                	return this.itemrenderer.get();
             	}
         	});
     	}
