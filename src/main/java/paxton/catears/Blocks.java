@@ -42,6 +42,12 @@ public class Blocks {
 		BlockBehaviour.Properties.of()
 );
 
+	public static final Block SUFRAISEII = register(
+		BlockIds.SUFRAISEII,
+		Block::new,
+		BlockBehaviour.Properties.of().sound(SoundType.METAL)
+);
+
 	public static final Block WHITE_TUFF = register(BlockIds.WHITE_TUFF, Block::new, BlockBehaviour.Properties.of().sound(SoundType.STONE));
 
     public static void initialize() {

@@ -1,12 +1,18 @@
 {
-  "item.cat-ears.cat_ears": "Cat Ears",
+  "item.cat-ears.cat_ears": "White Cat Ears",
   "creativeTab.cat-ears": "Cat Ears",
-  "item.cat-ears.orb": "Mysterious Orb",
-  "item.cat-ears.dark_orb": "Mysterious Orb",
+  "item.cat-ears.orb": "Light Mysterious Orb",
+  "item.cat-ears.dark_orb": "Dark Mysterious Orb",
   "item.cat-ears.fop_orb": "Mysterious Orb",
   "block.cat-ears.pedestal": "Pedestal",
   "block.cat-ears.white_tuff": "White Tuff",
   "block.cat-ears.gmod": "Missing Texture",
   "key.category.cat-ears.custom_category": "Cat Ears",
-  "key.cat-ears.meow": "Meow"
+  "key.cat-ears.meow": "Meow",
+  "item.cat-ears.black_cat_ears": "Black Cat Ears",
+  "item.cat-ears.fop_ears": "Fox Ears",
+  "item.cat-ears.cat_tail": "White Cat Tail",
+  "item.cat-ears.black_cat_tail": "Black Cat Tail",
+  "item.cat-ears.fop_tail": "Fox Tail",
+  "block.cat-ears.sufraiseii": "sufraiseii Block"
 }

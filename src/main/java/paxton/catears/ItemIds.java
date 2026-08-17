@@ -18,4 +18,16 @@ public class ItemIds {
 	public static final ResourceKey<Item> DARK_ORB = create("dark_orb");
 
 	public static final ResourceKey<Item> FOP_ORB = create("fop_orb");
+
+	public static final ResourceKey<Item> BLACK_CAT_EARS = create("black_cat_ears");
+
+	public static final ResourceKey<Item> CAT_TAIL = create("cat_tail");
+
+	public static final ResourceKey<Item> FOP_EARS = create("fop_ears");
+
+	public static final ResourceKey<Item> BLACK_CAT_TAIL = create("black_cat_tail");
+
+	public static final ResourceKey<Item> FOP_TAIL = create("fop_tail");
+
+	public static final ResourceKey<Item> DUD = create("dud");
 }

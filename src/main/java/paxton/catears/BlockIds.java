@@ -17,4 +17,6 @@ public class BlockIds {
 
     public static final BlockItemId WHITE_TUFF = create("white_tuff");
 
+    public static final BlockItemId SUFRAISEII = create("sufraiseii");
+
 }

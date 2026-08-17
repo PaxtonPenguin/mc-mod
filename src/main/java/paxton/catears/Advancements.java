@@ -29,11 +29,41 @@ public class Advancements extends FabricAdvancementProvider {
 				AdvancementType.TASK, // TASK, CHALLENGE, or GOAL
 				true, // Show the toast when completing it
 				true, // Announce it to chat
-				false // Hide it in the advancement tab until it's achieved
+				true // Hide it in the advancement tab until it's achieved
 		)
 		// "got_dirt" is the name referenced by other advancements when they want to have "requirements."
 		.addCriterion("eatorb", InventoryChangeTrigger.TriggerInstance.hasItems(Items.CAT_EARS))
 		// Give the advancement an id
 		.save(consumer, Identifier.fromNamespaceAndPath("cat-ears", "eatorb"));
+		AdvancementHolder eatDarkOrb = Advancement.Builder.advancement()
+		.display(
+				Items.BLACK_CAT_EARS, // The display icon
+				Component.literal("mrrp :3"), // The title
+				Component.literal("you're now a furry"), // The description
+				Identifier.withDefaultNamespace("gui/advancements/backgrounds/adventure"), // Background image for the tab in the advancements page, if this is a root advancement (has no parent)
+				AdvancementType.TASK, // TASK, CHALLENGE, or GOAL
+				true, // Show the toast when completing it
+				true, // Announce it to chat
+				true // Hide it in the advancement tab until it's achieved
+		)
+		// "got_dirt" is the name referenced by other advancements when they want to have "requirements."
+		.addCriterion("eatorb", InventoryChangeTrigger.TriggerInstance.hasItems(Items.BLACK_CAT_EARS))
+		// Give the advancement an id
+		.save(consumer, Identifier.fromNamespaceAndPath("cat-ears", "eatblackorb"));
+		AdvancementHolder eatFopOrb = Advancement.Builder.advancement()
+		.display(
+				Items.FOP_EARS, // The display icon
+				Component.literal("*insert fox noise*"), // The title
+				Component.literal("you're now a furry"), // The description
+				Identifier.withDefaultNamespace("gui/advancements/backgrounds/adventure"), // Background image for the tab in the advancements page, if this is a root advancement (has no parent)
+				AdvancementType.TASK, // TASK, CHALLENGE, or GOAL
+				true, // Show the toast when completing it
+				true, // Announce it to chat
+				true // Hide it in the advancement tab until it's achieved
+		)
+		// "got_dirt" is the name referenced by other advancements when they want to have "requirements."
+		.addCriterion("eatorb", InventoryChangeTrigger.TriggerInstance.hasItems(Items.FOP_EARS))
+		// Give the advancement an id
+		.save(consumer, Identifier.fromNamespaceAndPath("cat-ears", "eatfoporb"));
 	}
 }

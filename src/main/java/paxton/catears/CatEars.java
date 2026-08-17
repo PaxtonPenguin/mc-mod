@@ -16,12 +16,16 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.client.KeyMapping;
+import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.server.PlayerAdvancements;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.minecraft.world.item.ItemStack;
+import com.mojang.brigadier.context.CommandContext;
+import com.mojang.brigadier.Command;
 
 
 public class CatEars implements ModInitializer {
@@ -70,24 +74,43 @@ public class CatEars implements ModInitializer {
 			while (sendToChatKey.consumeClick()) {
 				if (client.player != null) {
 					//client.player.sendSystemMessage(Component.literal("Key Pressed!"));
-					final EquipmentSlot slot = client.player.getEquipmentSlotForItem(Items.CAT_EARS.getDefaultInstance());
-					final String stringedslot = slot.toString();					
-					if (stringedslot == "HEAD") {
+					final ItemStack slot = client.player.getItemBySlot(EquipmentSlot.HEAD);				
+					if (slot.is(Items.CAT_EARS) || slot.is(Items.BLACK_CAT_EARS)) {
 						client.player.playSound(SoundEvents.CAT_PURREOW_BABY.value(), 2f, 0.7f);
+					} else if (slot.is(Items.FOP_EARS)) {
+						client.player.playSound(SoundEvents.FOX_SCREECH, 2f, 0.7f);
 					} else {
-						LOGGER.info(stringedslot);
+						LOGGER.info("nah");
 					}
 				}
 			}
 		});
 
-		/*CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
-			dispatcher.register(Commands.literal("become").executes(context -> {
-				if (serverPlayer.getAdvancements().getOrStartProgress(advancement).isDone()) {
-
+		Command<CommandSourceStack> command = context -> {
+				final ServerPlayer player = context.getSource().getPlayer();
+				final String gotIt = player.getAttached(Save.isFurry);
+				LOGGER.info(gotIt);
+				if (gotIt == "white") {
+					player.setItemSlot(EquipmentSlot.HEAD, Items.CAT_EARS.getDefaultInstance());
+					player.setItemSlot(EquipmentSlot.LEGS, Items.CAT_TAIL.getDefaultInstance());
+					context.getSource().sendSuccess(() -> Component.literal("Became a Cat again"), false);
+				} else if (gotIt == "black") {
+					player.setItemSlot(EquipmentSlot.HEAD, Items.BLACK_CAT_EARS.getDefaultInstance());
+					player.setItemSlot(EquipmentSlot.LEGS, Items.BLACK_CAT_TAIL.getDefaultInstance());
+					context.getSource().sendSuccess(() -> Component.literal("Became a Cat again"), false);
+				} else if (gotIt == "fox") {
+					player.setItemSlot(EquipmentSlot.HEAD, Items.FOP_EARS.getDefaultInstance());
+					player.setItemSlot(EquipmentSlot.LEGS, Items.FOP_TAIL.getDefaultInstance());
+					context.getSource().sendSuccess(() -> Component.literal("Became a Fox again"), false);
+				} else {
+					context.getSource().sendSuccess(() -> Component.literal("Find an Orb you dingus"), false);
 				}
-			}));
-		});*/
+				return 0;
+		};
+
+		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
+			dispatcher.register(Commands.literal("become").executes(command));
+		});
 		/*serverPlayerEntity.getAdvancementTracker().getProgress(advancement).isDone() */
 		
 		LOGGER.info("Loaded, enjoy your cat ears :3");
@@ -95,9 +118,5 @@ public class CatEars implements ModInitializer {
 
 	public static Identifier id(String path) {
 		return Identifier.fromNamespaceAndPath(MOD_ID, path);
-	}
-
-	static boolean hasAdvancement(ServerPlayer serverPlayer, AdvancementHolder advancement) {
-		return serverPlayer.getAdvancements().getOrStartProgress(advancement).isDone();
 	}
 }

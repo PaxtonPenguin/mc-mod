@@ -4,7 +4,7 @@
       "conditions": {
         "items": [
           {
-            "items": "cat-ears:cat_ears"
+            "items": "cat-ears:fop_ears"
           }
         ]
       },
@@ -16,9 +16,9 @@
     "description": "you're now a furry",
     "hidden": true,
     "icon": {
-      "id": "cat-ears:cat_ears"
+      "id": "cat-ears:fop_ears"
     },
-    "title": "meow :3"
+    "title": "*insert fox noise*"
   },
   "requirements": [
     [
