@@ -16,10 +16,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"paxton.catears.CatEars"
+			"paxton.pixton.CatEars"
 		],
 		"fabric-datagen": [ 
-     		 "paxton.catears.DataGen"
+     		 "paxton.pixton.DataGen"
     	] 
 	},
 	"mixins": [

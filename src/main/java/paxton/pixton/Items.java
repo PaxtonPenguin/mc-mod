@@ -12,9 +12,11 @@ import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.core.Registry;
 import java.util.function.Function;
 import net.minecraft.core.Holder;
-
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
+import net.minecraft.util.Unit;
+
 public class Items {
     public static Item register(ResourceKey<Item> itemKey, Function<Item.Properties, Item> itemFactory, Item.Properties settings) {
 		// Create the item instance.
@@ -71,17 +73,17 @@ public class Items {
 		new Item.Properties().food(FopOrb.ORB_COMPONENT, FopOrb.ORB_CONSUMABLE_COMPONENT).component(Components.TOOLTIP, new Tooltip("Wait...why can you eat this"))
 	);
 	
-	public static final Item CAT_EARS = register(ItemIds.CAT_EARS, properties -> new cat_ears(Material.INSTANCE, ArmorType.HELMET, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("meow :3")));
+	public static final Item CAT_EARS = register(ItemIds.CAT_EARS, properties -> new cat_ears(Material.INSTANCE, ArmorType.HELMET, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("meow :3")).component(DataComponents.UNBREAKABLE, Unit.INSTANCE));
 
-	public static final Item BLACK_CAT_EARS = register(ItemIds.BLACK_CAT_EARS, properties -> new black_cat_ears(Material.INSTANCE, ArmorType.HELMET, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("mrrp :3")));
+	public static final Item BLACK_CAT_EARS = register(ItemIds.BLACK_CAT_EARS, properties -> new black_cat_ears(Material.INSTANCE, ArmorType.HELMET, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("mrrp :3")).component(DataComponents.UNBREAKABLE, Unit.INSTANCE));
 
-	public static final Item FOP_EARS = register(ItemIds.FOP_EARS, properties -> new fop_ears(Material.INSTANCE, ArmorType.HELMET, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("fun fact: you can bind animal noises")));
+	public static final Item FOP_EARS = register(ItemIds.FOP_EARS, properties -> new fop_ears(Material.INSTANCE, ArmorType.HELMET, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("fun fact: you can bind animal noises")).component(DataComponents.UNBREAKABLE, Unit.INSTANCE));
 
-	public static final Item CAT_TAIL = register(ItemIds.CAT_TAIL, properties -> new cat_tail(Material.INSTANCE, ArmorType.LEGGINGS, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("purr :3")));
+	public static final Item CAT_TAIL = register(ItemIds.CAT_TAIL, properties -> new cat_tail(Material.INSTANCE, ArmorType.LEGGINGS, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("purr :3")).component(DataComponents.UNBREAKABLE, Unit.INSTANCE));
 
-	public static final Item BLACK_CAT_TAIL = register(ItemIds.BLACK_CAT_TAIL, properties -> new black_cat_tail(Material.INSTANCE, ArmorType.LEGGINGS, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("*wags tail* :3")));
+	public static final Item BLACK_CAT_TAIL = register(ItemIds.BLACK_CAT_TAIL, properties -> new black_cat_tail(Material.INSTANCE, ArmorType.LEGGINGS, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("*wags tail* :3")).component(DataComponents.UNBREAKABLE, Unit.INSTANCE));
 
-	public static final Item FOP_TAIL = register(ItemIds.FOP_TAIL, properties -> new fop_tail(Material.INSTANCE, ArmorType.LEGGINGS, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("fun fact: you need ears to make noises")));
+	public static final Item FOP_TAIL = register(ItemIds.FOP_TAIL, properties -> new fop_tail(Material.INSTANCE, ArmorType.LEGGINGS, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("fun fact: you need ears to make noises")).component(DataComponents.UNBREAKABLE, Unit.INSTANCE));
 
 	public static final ResourceKey<CreativeModeTab> CUSTOM_CREATIVE_TAB_KEY = ResourceKey.create(
 		BuiltInRegistries.CREATIVE_MODE_TAB.key(), Identifier.fromNamespaceAndPath("cat-ears", "creative_tab")

@@ -89,15 +89,15 @@ public class CatEars implements ModInitializer {
 				if (gotIt == "white") {
 					player.setItemSlot(EquipmentSlot.HEAD, Items.CAT_EARS.getDefaultInstance());
 					player.setItemSlot(EquipmentSlot.LEGS, Items.CAT_TAIL.getDefaultInstance());
-					context.getSource().sendSuccess(() -> Component.literal("Became a Cat again"), false);
+					context.getSource().sendSuccess(() -> Component.literal("You became a Cat again"), false);
 				} else if (gotIt == "black") {
 					player.setItemSlot(EquipmentSlot.HEAD, Items.BLACK_CAT_EARS.getDefaultInstance());
 					player.setItemSlot(EquipmentSlot.LEGS, Items.BLACK_CAT_TAIL.getDefaultInstance());
-					context.getSource().sendSuccess(() -> Component.literal("Became a Cat again"), false);
+					context.getSource().sendSuccess(() -> Component.literal("You became a Cat again"), false);
 				} else if (gotIt == "fox") {
 					player.setItemSlot(EquipmentSlot.HEAD, Items.FOP_EARS.getDefaultInstance());
 					player.setItemSlot(EquipmentSlot.LEGS, Items.FOP_TAIL.getDefaultInstance());
-					context.getSource().sendSuccess(() -> Component.literal("Became a Fox again"), false);
+					context.getSource().sendSuccess(() -> Component.literal("You became a Fox again"), false);
 				} else {
 					context.getSource().sendSuccess(() -> Component.literal("Find an Orb you dingus"), false);
 				}
