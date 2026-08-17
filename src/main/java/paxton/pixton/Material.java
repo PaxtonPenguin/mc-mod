@@ -1,4 +1,4 @@
-package paxton.catears;
+package paxton.pixton;
 
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;

@@ -1,4 +1,4 @@
-package paxton.catears;
+package paxton.pixton;
 
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffect;
@@ -6,7 +6,6 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.*;
-import net.minecraft.world.item.ItemStack;
 
 public class Become extends MobEffect {
 	protected Become() {

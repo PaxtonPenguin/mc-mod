@@ -1,4 +1,4 @@
-package paxton.catears;
+package paxton.pixton;
 
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Item;
@@ -23,19 +23,19 @@ import org.jetbrains.annotations.Nullable;
 
 import net.minecraft.world.item.equipment.ArmorMaterial;
 
-public class fop_tail extends Item implements GeoItem {
+public class cat_tail extends Item implements GeoItem {
     	private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
 		//public static final MutableObject<Object> geoRenderProvider = new MutableObject<>();
 
-    	public fop_tail(ArmorMaterial material, ArmorType type, Properties properties) {
+    	public cat_tail(ArmorMaterial material, ArmorType type, Properties properties) {
         	super(properties.humanoidArmor(material, type));
     	}
 
 		@Override
     	public void createGeoRenderer(Consumer<GeoRenderProvider> consumer) {
         	consumer.accept(new GeoRenderProvider() {
-            	private final Supplier<GeoArmorRenderer<fop_tail, HumanoidRenderState>> renderer = Suppliers.memoize(() -> new GeoArmorRenderer<>(fop_tail.this));
-				private final Supplier<GeoItemRenderer<fop_tail>> itemrenderer = Suppliers.memoize(() -> new GeoItemRenderer<>(fop_tail.this));
+            	private final Supplier<GeoArmorRenderer<cat_tail, HumanoidRenderState>> renderer = Suppliers.memoize(() -> new GeoArmorRenderer<>(cat_tail.this));
+				private final Supplier<GeoItemRenderer<cat_tail>> itemrenderer = Suppliers.memoize(() -> new GeoItemRenderer<>(cat_tail.this));
 
             	@Override
             	public @Nullable GeoArmorRenderer<?, ?> getGeoArmorRenderer(ItemStack itemStack, EquipmentSlot equipmentSlot) {
@@ -43,7 +43,7 @@ public class fop_tail extends Item implements GeoItem {
             	}
 
 				@Override
-           		public @Nullable GeoItemRenderer<fop_tail> getGeoItemRenderer() {
+           		public @Nullable GeoItemRenderer<cat_tail> getGeoItemRenderer() {
                 	return this.itemrenderer.get();
             	}
         	});

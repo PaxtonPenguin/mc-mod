@@ -1,14 +1,10 @@
-package paxton.catears;
+package paxton.pixton;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.state.BlockState;
-import java.util.function.Function;
 import net.minecraft.core.Registry;
-import net.minecraft.world.item.Item;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
 

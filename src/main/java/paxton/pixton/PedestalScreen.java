@@ -1,4 +1,4 @@
-package paxton.catears;
+package paxton.pixton;
 
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;

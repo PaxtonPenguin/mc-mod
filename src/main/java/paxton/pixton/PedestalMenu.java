@@ -1,4 +1,4 @@
-package paxton.catears;
+package paxton.pixton;
 
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;

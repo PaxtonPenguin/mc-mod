@@ -1,4 +1,4 @@
-package paxton.catears;
+package paxton.pixton;
 
 import net.minecraft.references.BlockItemId;
 import net.minecraft.resources.Identifier;

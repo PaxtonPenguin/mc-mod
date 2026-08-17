@@ -1,26 +1,17 @@
-package paxton.catears;
+package paxton.pixton;
 
-//import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.entity.EquipmentSlot;
-//import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.equipment.ArmorType;
-//import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
 import net.minecraft.core.Registry;
 import java.util.function.Function;
-import java.util.function.UnaryOperator;
 import net.minecraft.core.Holder;
-
-import com.google.common.base.Suppliers;
-import java.util.function.Supplier;
-//import javax.annotation.*;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
@@ -54,7 +45,7 @@ public class Items {
 
 	public static final Holder<MobEffect> BECOMEFOP = Registry.registerForHolder(BuiltInRegistries.MOB_EFFECT, Identifier.fromNamespaceAndPath("cat-ears", "becomefop"), new BecomeFop());
 
-    public static final Item DUD = register(ItemIds.DUD, Item::new, new Item.Properties());
+    public static final Item DUD = register(ItemIds.DUD, Item::new, new Item.Properties().component(Components.TOOLTIP, new Tooltip("you got the dud card")));
 
 	//public static final Item ORB = register(ItemIds.ORB, Item::new, new Item.Properties());
 
@@ -65,32 +56,32 @@ public class Items {
 	public static final Item ORB = register(
 		ItemIds.ORB,
 		Item::new,
-		new Item.Properties().food(Orb.ORB_COMPONENT, Orb.ORB_CONSUMABLE_COMPONENT)
+		new Item.Properties().food(Orb.ORB_COMPONENT, Orb.ORB_CONSUMABLE_COMPONENT).component(Components.TOOLTIP, new Tooltip("Wait...why can you eat this"))
 	);
 
 	public static final Item DARK_ORB = register(
 		ItemIds.DARK_ORB,
 		Item::new,
-		new Item.Properties().food(DarkOrb.ORB_COMPONENT, DarkOrb.ORB_CONSUMABLE_COMPONENT)
+		new Item.Properties().food(DarkOrb.ORB_COMPONENT, DarkOrb.ORB_CONSUMABLE_COMPONENT).component(Components.TOOLTIP, new Tooltip("Wait...why can you eat this"))
 	);
 
 	public static final Item FOP_ORB = register(
 		ItemIds.FOP_ORB,
 		Item::new,
-		new Item.Properties().food(FopOrb.ORB_COMPONENT, FopOrb.ORB_CONSUMABLE_COMPONENT)
+		new Item.Properties().food(FopOrb.ORB_COMPONENT, FopOrb.ORB_CONSUMABLE_COMPONENT).component(Components.TOOLTIP, new Tooltip("Wait...why can you eat this"))
 	);
 	
-	public static final Item CAT_EARS = register(ItemIds.CAT_EARS, properties -> new cat_ears(Material.INSTANCE, ArmorType.HELMET, properties), new Item.Properties());
+	public static final Item CAT_EARS = register(ItemIds.CAT_EARS, properties -> new cat_ears(Material.INSTANCE, ArmorType.HELMET, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("meow :3")));
 
-	public static final Item BLACK_CAT_EARS = register(ItemIds.BLACK_CAT_EARS, properties -> new black_cat_ears(Material.INSTANCE, ArmorType.HELMET, properties), new Item.Properties());
+	public static final Item BLACK_CAT_EARS = register(ItemIds.BLACK_CAT_EARS, properties -> new black_cat_ears(Material.INSTANCE, ArmorType.HELMET, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("mrrp :3")));
 
-	public static final Item FOP_EARS = register(ItemIds.FOP_EARS, properties -> new fop_ears(Material.INSTANCE, ArmorType.HELMET, properties), new Item.Properties());
+	public static final Item FOP_EARS = register(ItemIds.FOP_EARS, properties -> new fop_ears(Material.INSTANCE, ArmorType.HELMET, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("fun fact: you can bind animal noises")));
 
-	public static final Item CAT_TAIL = register(ItemIds.CAT_TAIL, properties -> new cat_tail(Material.INSTANCE, ArmorType.LEGGINGS, properties), new Item.Properties());
+	public static final Item CAT_TAIL = register(ItemIds.CAT_TAIL, properties -> new cat_tail(Material.INSTANCE, ArmorType.LEGGINGS, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("purr :3")));
 
-	public static final Item BLACK_CAT_TAIL = register(ItemIds.BLACK_CAT_TAIL, properties -> new black_cat_tail(Material.INSTANCE, ArmorType.LEGGINGS, properties), new Item.Properties());
+	public static final Item BLACK_CAT_TAIL = register(ItemIds.BLACK_CAT_TAIL, properties -> new black_cat_tail(Material.INSTANCE, ArmorType.LEGGINGS, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("*wags tail* :3")));
 
-	public static final Item FOP_TAIL = register(ItemIds.FOP_TAIL, properties -> new fop_tail(Material.INSTANCE, ArmorType.LEGGINGS, properties), new Item.Properties());
+	public static final Item FOP_TAIL = register(ItemIds.FOP_TAIL, properties -> new fop_tail(Material.INSTANCE, ArmorType.LEGGINGS, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("fun fact: you need ears to make noises")));
 
 	public static final ResourceKey<CreativeModeTab> CUSTOM_CREATIVE_TAB_KEY = ResourceKey.create(
 		BuiltInRegistries.CREATIVE_MODE_TAB.key(), Identifier.fromNamespaceAndPath("cat-ears", "creative_tab")

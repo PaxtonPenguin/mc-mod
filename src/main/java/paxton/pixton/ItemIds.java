@@ -1,4 +1,4 @@
-package paxton.catears;
+package paxton.pixton;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;

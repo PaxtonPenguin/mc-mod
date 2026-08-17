@@ -1,4 +1,4 @@
-package paxton.catears;
+package paxton.pixton;
 
 import java.util.concurrent.CompletableFuture;
 

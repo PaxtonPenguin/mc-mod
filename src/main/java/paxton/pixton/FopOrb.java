@@ -1,4 +1,4 @@
-package paxton.catears;
+package paxton.pixton;
 
 import net.minecraft.world.effect.MobEffectInstance;
 //import net.minecraft.world.effect.MobEffects;

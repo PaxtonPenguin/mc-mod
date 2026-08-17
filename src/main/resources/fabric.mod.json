@@ -1,9 +1,9 @@
 {
 	"schemaVersion": 1,
-	"id": "catears",
+	"id": "pixton",
 	"version": "${version}",
-	"name": "Cat Ears",
-	"description": "This mod adds Cat Ears.",
+	"name": "Paxton's Stuff",
+	"description": "This mod adds a bunch of furry related stuff, and some othet things.",
 	"authors": [
 		"PaxtonPenguin"
 	],

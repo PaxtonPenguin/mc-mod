@@ -1,4 +1,4 @@
-package paxton.catears;
+package paxton.pixton;
 
 import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentType;

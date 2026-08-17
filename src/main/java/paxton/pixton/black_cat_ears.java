@@ -1,4 +1,4 @@
-package paxton.catears;
+package paxton.pixton;
 
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Item;
@@ -23,19 +23,19 @@ import org.jetbrains.annotations.Nullable;
 
 import net.minecraft.world.item.equipment.ArmorMaterial;
 
-public class cat_tail extends Item implements GeoItem {
+public class black_cat_ears extends Item implements GeoItem {
     	private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
 		//public static final MutableObject<Object> geoRenderProvider = new MutableObject<>();
 
-    	public cat_tail(ArmorMaterial material, ArmorType type, Properties properties) {
+    	public black_cat_ears(ArmorMaterial material, ArmorType type, Properties properties) {
         	super(properties.humanoidArmor(material, type));
     	}
 
 		@Override
     	public void createGeoRenderer(Consumer<GeoRenderProvider> consumer) {
         	consumer.accept(new GeoRenderProvider() {
-            	private final Supplier<GeoArmorRenderer<cat_tail, HumanoidRenderState>> renderer = Suppliers.memoize(() -> new GeoArmorRenderer<>(cat_tail.this));
-				private final Supplier<GeoItemRenderer<cat_tail>> itemrenderer = Suppliers.memoize(() -> new GeoItemRenderer<>(cat_tail.this));
+            	private final Supplier<GeoArmorRenderer<black_cat_ears, HumanoidRenderState>> renderer = Suppliers.memoize(() -> new GeoArmorRenderer<>(black_cat_ears.this));
+				private final Supplier<GeoItemRenderer<black_cat_ears>> itemrenderer = Suppliers.memoize(() -> new GeoItemRenderer<>(black_cat_ears.this));
 
             	@Override
             	public @Nullable GeoArmorRenderer<?, ?> getGeoArmorRenderer(ItemStack itemStack, EquipmentSlot equipmentSlot) {
@@ -43,7 +43,7 @@ public class cat_tail extends Item implements GeoItem {
             	}
 
 				@Override
-           		public @Nullable GeoItemRenderer<cat_tail> getGeoItemRenderer() {
+           		public @Nullable GeoItemRenderer<black_cat_ears> getGeoItemRenderer() {
                 	return this.itemrenderer.get();
             	}
         	});
