@@ -8,7 +8,7 @@ import net.minecraft.resources.Identifier;
 public class ItemIds {
     public static ResourceKey<Item> create(String name) {
 		// Create the item key.
-		return ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("cat-ears", name));
+		return ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(CatEars.MOD_ID, name));
 	}
 
     public static final ResourceKey<Item> CAT_EARS = create("cat_ears");

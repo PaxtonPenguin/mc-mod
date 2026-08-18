@@ -34,7 +34,7 @@ public class Advancements extends FabricAdvancementProvider {
 		// "got_dirt" is the name referenced by other advancements when they want to have "requirements."
 		.addCriterion("eatorb", InventoryChangeTrigger.TriggerInstance.hasItems(Items.CAT_EARS))
 		// Give the advancement an id
-		.save(consumer, Identifier.fromNamespaceAndPath("cat-ears", "eatorb"));
+		.save(consumer, Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "eatorb"));
 		AdvancementHolder eatDarkOrb = Advancement.Builder.advancement()
 		.display(
 				Items.BLACK_CAT_EARS, // The display icon
@@ -49,7 +49,7 @@ public class Advancements extends FabricAdvancementProvider {
 		// "got_dirt" is the name referenced by other advancements when they want to have "requirements."
 		.addCriterion("eatorb", InventoryChangeTrigger.TriggerInstance.hasItems(Items.BLACK_CAT_EARS))
 		// Give the advancement an id
-		.save(consumer, Identifier.fromNamespaceAndPath("cat-ears", "eatblackorb"));
+		.save(consumer, Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "eatblackorb"));
 		AdvancementHolder eatFopOrb = Advancement.Builder.advancement()
 		.display(
 				Items.FOP_EARS, // The display icon
@@ -64,6 +64,6 @@ public class Advancements extends FabricAdvancementProvider {
 		// "got_dirt" is the name referenced by other advancements when they want to have "requirements."
 		.addCriterion("eatorb", InventoryChangeTrigger.TriggerInstance.hasItems(Items.FOP_EARS))
 		// Give the advancement an id
-		.save(consumer, Identifier.fromNamespaceAndPath("cat-ears", "eatfoporb"));
+		.save(consumer, Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "eatfoporb"));
 	}
 }

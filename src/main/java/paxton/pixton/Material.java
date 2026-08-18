@@ -15,9 +15,9 @@ import java.util.Map;
 public class Material {
     public static final int BASE_DURABILITY = 9999;
 
-    public static final ResourceKey<EquipmentAsset> FUZZY = ResourceKey.create(EquipmentAssets.ROOT_ID, Identifier.fromNamespaceAndPath("cat-ears", "fuzzy"));
+    public static final ResourceKey<EquipmentAsset> FUZZY = ResourceKey.create(EquipmentAssets.ROOT_ID, Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "fuzzy"));
 
-    public static final TagKey<Item> REPAIRS_FUZZY = TagKey.create(BuiltInRegistries.ITEM.key(), Identifier.fromNamespaceAndPath("cat-ears", "repairs_guidite_armor"));
+    public static final TagKey<Item> REPAIRS_FUZZY = TagKey.create(BuiltInRegistries.ITEM.key(), Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "repairs_guidite_armor"));
 
     public static final ArmorMaterial INSTANCE = new ArmorMaterial(
 		BASE_DURABILITY,

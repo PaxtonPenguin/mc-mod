@@ -1,0 +1,29 @@
+{
+  "criteria": {
+    "eatorb": {
+      "conditions": {
+        "items": [
+          {
+            "items": "pixton:cat_ears"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "background": "minecraft:gui/advancements/backgrounds/adventure",
+    "description": "you're now a furry",
+    "hidden": true,
+    "icon": {
+      "id": "pixton:cat_ears"
+    },
+    "title": "meow :3"
+  },
+  "requirements": [
+    [
+      "eatorb"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

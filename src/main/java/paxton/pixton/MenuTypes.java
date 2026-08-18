@@ -13,7 +13,7 @@ public class MenuTypes {
 					String name,
 					MenuType.MenuSupplier<T> constructor
 	) {
-		return Registry.register(BuiltInRegistries.MENU, Identifier.fromNamespaceAndPath("cat-ears", name), new MenuType<>(constructor, FeatureFlagSet.of()));
+		return Registry.register(BuiltInRegistries.MENU, Identifier.fromNamespaceAndPath(CatEars.MOD_ID, name), new MenuType<>(constructor, FeatureFlagSet.of()));
 	}
 
 	public static final MenuType<PedestalMenu> PEDESTAL = register("pedestal", PedestalMenu::new);

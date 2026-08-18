@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "pixton:item/black_cat_ears",
+    "model": {
+      "type": "geckolib:geckolib"
+    }
+  }
+}

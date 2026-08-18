@@ -29,7 +29,7 @@ public class Items {
 	}
 
 	private static <T extends Item> T register(String name, Function<Item.Properties, T> itemFactory, Item.Properties settings) {
-		ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("cat-ears", name));
+		ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(CatEars.MOD_ID, name));
 		//? if >=1.21.2 {
 		T item = itemFactory.apply(settings.setId(itemKey));
 		return Registry.register(BuiltInRegistries.ITEM, itemKey, item);
@@ -41,11 +41,11 @@ public class Items {
 
 	//public static Supplier<T> register(ResourceKey<Item>)
 
-	public static final Holder<MobEffect> BECOME = Registry.registerForHolder(BuiltInRegistries.MOB_EFFECT, Identifier.fromNamespaceAndPath("cat-ears", "become"), new Become());
+	public static final Holder<MobEffect> BECOME = Registry.registerForHolder(BuiltInRegistries.MOB_EFFECT, Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "become"), new Become());
 
-	public static final Holder<MobEffect> BECOMEBLACK = Registry.registerForHolder(BuiltInRegistries.MOB_EFFECT, Identifier.fromNamespaceAndPath("cat-ears", "becomeblack"), new BecomeBlack());
+	public static final Holder<MobEffect> BECOMEBLACK = Registry.registerForHolder(BuiltInRegistries.MOB_EFFECT, Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "becomeblack"), new BecomeBlack());
 
-	public static final Holder<MobEffect> BECOMEFOP = Registry.registerForHolder(BuiltInRegistries.MOB_EFFECT, Identifier.fromNamespaceAndPath("cat-ears", "becomefop"), new BecomeFop());
+	public static final Holder<MobEffect> BECOMEFOP = Registry.registerForHolder(BuiltInRegistries.MOB_EFFECT, Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "becomefop"), new BecomeFop());
 
     public static final Item DUD = register(ItemIds.DUD, Item::new, new Item.Properties().component(Components.TOOLTIP, new Tooltip("you got the dud card")));
 
@@ -86,12 +86,12 @@ public class Items {
 	public static final Item FOP_TAIL = register(ItemIds.FOP_TAIL, properties -> new fop_tail(Material.INSTANCE, ArmorType.LEGGINGS, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("fun fact: you need ears to make noises")).component(DataComponents.UNBREAKABLE, Unit.INSTANCE));
 
 	public static final ResourceKey<CreativeModeTab> CUSTOM_CREATIVE_TAB_KEY = ResourceKey.create(
-		BuiltInRegistries.CREATIVE_MODE_TAB.key(), Identifier.fromNamespaceAndPath("cat-ears", "creative_tab")
+		BuiltInRegistries.CREATIVE_MODE_TAB.key(), Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "creative_tab")
 	);
 
 	public static final CreativeModeTab CUSTOM_CREATIVE_TAB = FabricCreativeModeTab.builder()
 		.icon(() -> new ItemStack(Items.CAT_EARS))
-		.title(Component.translatable("creativeTab.cat-ears"))
+		.title(Component.translatable("creativeTab.pixton"))
 		.displayItems((params, output) -> {
 			output.accept(Items.CAT_EARS);
 			output.accept(Items.BLACK_CAT_EARS);

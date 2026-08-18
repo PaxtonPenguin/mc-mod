@@ -1,0 +1,29 @@
+{
+  "criteria": {
+    "eatorb": {
+      "conditions": {
+        "items": [
+          {
+            "items": "pixton:black_cat_ears"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "background": "minecraft:gui/advancements/backgrounds/adventure",
+    "description": "you're now a furry",
+    "hidden": true,
+    "icon": {
+      "id": "pixton:black_cat_ears"
+    },
+    "title": "mrrp :3"
+  },
+  "requirements": [
+    [
+      "eatorb"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

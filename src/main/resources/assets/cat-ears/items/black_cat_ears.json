@@ -1,9 +1,0 @@
-{
-  "model": {
-    "type": "minecraft:special",
-    "base": "cat-ears:item/black_cat_ears",
-    "model": {
-      "type": "geckolib:geckolib"
-    }
-  }
-}

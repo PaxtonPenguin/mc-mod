@@ -8,7 +8,7 @@ import com.mojang.serialization.Codec;
 
 public class Save {
     public static final AttachmentType<String> isFurry = AttachmentRegistry.create(
-		Identifier.fromNamespaceAndPath("cat-ears", "isfurry"), // The ID of your Attachment
+		Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "isfurry"), // The ID of your Attachment
         builder -> builder
 			.initializer(() -> "") // The default value of the Attachment, if one has not been set.
 			.persistent(Codec.STRING) // Dictates how this Attachment's data should be saved and loaded.

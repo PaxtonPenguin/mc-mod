@@ -8,13 +8,12 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 
 public class PedestalScreen extends AbstractContainerScreen<PedestalMenu>{
-    private static final Identifier CONTAINER_TEXTURE = Identifier.fromNamespaceAndPath("cat-ears", "textures/gui/container/pedestal.png");
+    private static final Identifier CONTAINER_TEXTURE = Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "textures/gui/container/pedestal.png");
 
 	public PedestalScreen(PedestalMenu abstractContainerMenu, Inventory inventory, Component component) {
 		super(abstractContainerMenu, inventory, component);
 		// Center the title
 		this.titleLabelX = (this.imageWidth - this.font.width(this.title)) / 2;
-		CatEars.LOGGER.info("ran screen");
 	}
 
 	@Override

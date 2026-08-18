@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "pixton:item/fop_tail",
+    "model": {
+      "type": "geckolib:geckolib"
+    }
+  }
+}

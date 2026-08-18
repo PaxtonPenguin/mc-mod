@@ -7,7 +7,7 @@ import net.minecraft.resources.Identifier;
 
 public class BlockIds {
     private static BlockItemId create(String name) {
-		Identifier id = Identifier.fromNamespaceAndPath("cat-ears", name);
+		Identifier id = Identifier.fromNamespaceAndPath(CatEars.MOD_ID, name);
 		return BlockItemId.create(id, id);
 	}
 

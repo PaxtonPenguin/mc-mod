@@ -17,7 +17,7 @@ public class BlockEntities {
 		FabricBlockEntityTypeBuilder.Factory<? extends T> entityFactory,
 		Block... blocks
 ) {
-	Identifier id = Identifier.fromNamespaceAndPath("cat-ears", name);
+	Identifier id = Identifier.fromNamespaceAndPath(CatEars.MOD_ID, name);
 	return Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, id, FabricBlockEntityTypeBuilder.<T>create(entityFactory, blocks).build());
 }
 

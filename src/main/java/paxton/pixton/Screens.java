@@ -6,14 +6,10 @@ import net.fabricmc.api.ModInitializer;
 public class Screens implements ModInitializer {
     @Override
 	public void onInitialize() {
-		CatEars.LOGGER.info("pre init");
 		MenuScreens.register(MenuTypes.PEDESTAL, PedestalScreen::new);
-		CatEars.LOGGER.info("init pedestal");
 	}
 
 	public static void initialize() {
-		CatEars.LOGGER.info("pre init");
 		MenuScreens.register(MenuTypes.PEDESTAL, PedestalScreen::new);
-		CatEars.LOGGER.info("init pedestal");
 	}
 }

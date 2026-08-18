@@ -45,7 +45,7 @@ protected void saveAdditional(ValueOutput output) {
 	@Override
 	@NonNull
 	public Component getDisplayName() {
-		return Component.translatable("block.cat-ears.pedestal");
+		return Component.translatable("block.pixton.pedestal");
 	}
 
 	@Override

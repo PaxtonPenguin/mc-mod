@@ -25,7 +25,7 @@ import com.mojang.brigadier.Command;
 
 
 public class CatEars implements ModInitializer {
-	public static final String MOD_ID = "cat-ears";
+	public static final String MOD_ID = "pixton";
 
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
@@ -46,7 +46,7 @@ public class CatEars implements ModInitializer {
 		Screens.initialize();
 		//CatNoises.initialize();
 		//ItemTooltipCallback.EVENT.register((stack, context, type, tooltip) -> {
-		//	tooltip.add(Component.translatable("item.cat-ears.cat_ears", ":3").withStyle(ChatFormatting.GOLD));
+		//	tooltip.add(Component.translatable("item.pixton.cat_ears", ":3").withStyle(ChatFormatting.GOLD));
 		//});
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
 			dispatcher.register(Commands.literal("test").executes(context -> {
@@ -56,10 +56,10 @@ public class CatEars implements ModInitializer {
 		});
 
 		KeyMapping.Category CATEGORY = KeyMapping.Category.register(
-			Identifier.fromNamespaceAndPath("cat-ears", "custom_category"));
+			Identifier.fromNamespaceAndPath(MOD_ID, "custom_category"));
 			KeyMapping meow = KeyMappingHelper.registerKeyMapping(
 				new KeyMapping(
-					"key.cat-ears.meow", // The translation key for the key mapping.
+					"key.pixton.meow", // The translation key for the key mapping.
 					InputConstants.Type.KEYSYM, // The type of the keybinding; KEYSYM for keyboard, MOUSE for mouse.
 					InputConstants.KEY_M, // The keycode of the key.
 					CATEGORY // The category of the mapping.

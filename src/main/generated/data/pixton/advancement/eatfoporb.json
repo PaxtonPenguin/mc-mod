@@ -1,0 +1,29 @@
+{
+  "criteria": {
+    "eatorb": {
+      "conditions": {
+        "items": [
+          {
+            "items": "pixton:fop_ears"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "background": "minecraft:gui/advancements/backgrounds/adventure",
+    "description": "you're now a furry",
+    "hidden": true,
+    "icon": {
+      "id": "pixton:fop_ears"
+    },
+    "title": "*insert fox noise*"
+  },
+  "requirements": [
+    [
+      "eatorb"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
