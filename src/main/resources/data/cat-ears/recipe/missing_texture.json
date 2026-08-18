@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "equipment",
+    "key": {
+        "#": "minecraft:purple_wool",
+        "X": "minecraft:black_wool"
+    },
+    "pattern": [
+        "   ",
+        " #X",
+        " X#"
+    ],
+    "result": {
+        "count": 1,
+        "id": "cat-ears:gmod"
+    }
+}

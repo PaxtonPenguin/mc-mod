@@ -57,7 +57,7 @@ public class CatEars implements ModInitializer {
 
 		KeyMapping.Category CATEGORY = KeyMapping.Category.register(
 			Identifier.fromNamespaceAndPath("cat-ears", "custom_category"));
-			KeyMapping sendToChatKey = KeyMappingHelper.registerKeyMapping(
+			KeyMapping meow = KeyMappingHelper.registerKeyMapping(
 				new KeyMapping(
 					"key.cat-ears.meow", // The translation key for the key mapping.
 					InputConstants.Type.KEYSYM, // The type of the keybinding; KEYSYM for keyboard, MOUSE for mouse.
@@ -67,7 +67,7 @@ public class CatEars implements ModInitializer {
 			);
 		
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
-			while (sendToChatKey.consumeClick()) {
+			while (meow.consumeClick()) {
 				if (client.player != null) {
 					//client.player.sendSystemMessage(Component.literal("Key Pressed!"));
 					final ItemStack slot = client.player.getItemBySlot(EquipmentSlot.HEAD);				
