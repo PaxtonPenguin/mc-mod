@@ -3,12 +3,14 @@ package paxton.pixton;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.*;
+import java.util.Random;
 
-public class BecomeFop extends MobEffect {
-	protected BecomeFop() {
+public class RandomEffect extends MobEffect {
+    protected RandomEffect() {
 		// category: StatusEffectCategory - describes if the effect is helpful (BENEFICIAL), harmful (HARMFUL) or useless (NEUTRAL)
 		// color: int - Color is the color assigned to the effect (in RGB)
 		super(MobEffectCategory.BENEFICIAL, 0xe9b8b3);
@@ -26,10 +28,18 @@ public class BecomeFop extends MobEffect {
 	public boolean applyEffectTick(ServerLevel level, LivingEntity entity, int amplifier) {
 		if (entity instanceof Player player) {
 			((Player) entity).giveExperiencePoints(1 << amplifier); // Higher amplifier gives you experience faster
+            final Random r = new Random();
+	        final int r1 = r.nextInt(3);
+	        final int r2 = r.nextInt(3);
+	        final int r3 = r.nextInt(3);
 
-			player.setItemSlot(EquipmentSlot.HEAD, Items.FOP_EARS.getDefaultInstance());
-			player.setItemSlot(EquipmentSlot.LEGS, Items.FOP_TAIL.getDefaultInstance());
-			player.setAttached(Save.isFurry, "fox");
+            final MobEffectInstance white = new MobEffectInstance(Items.BECOME, r1);
+            final MobEffectInstance black = new MobEffectInstance(Items.BECOMEBLACK, r2);
+            final MobEffectInstance fop = new MobEffectInstance(Items.BECOMEFOP, r1);
+
+            player.addEffect(white);
+            player.addEffect(black);
+            player.addEffect(black);
 		}
 
 		return super.applyEffectTick(level, entity, amplifier);

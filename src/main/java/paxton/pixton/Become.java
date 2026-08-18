@@ -30,8 +30,6 @@ public class Become extends MobEffect {
 			player.setItemSlot(EquipmentSlot.HEAD, Items.CAT_EARS.getDefaultInstance());
 			player.setItemSlot(EquipmentSlot.LEGS, Items.CAT_TAIL.getDefaultInstance());
 			player.setAttached(Save.isFurry, "white");
-			
-			//yeah.add(103, Items.CAT_EARS.getDefaultInstance());
 		}
 
 		return super.applyEffectTick(level, entity, amplifier);

@@ -30,4 +30,6 @@ public class ItemIds {
 	public static final ResourceKey<Item> FOP_TAIL = create("fop_tail");
 
 	public static final ResourceKey<Item> DUD = create("dud");
+
+	public static final ResourceKey<Item> BOTTLE = create("bottle");
 }

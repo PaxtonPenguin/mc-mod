@@ -12,17 +12,20 @@ import net.minecraft.client.KeyMapping;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.InteractionHand;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.brigadier.Command;
-
 
 public class CatEars implements ModInitializer {
 	public static final String MOD_ID = "pixton";
@@ -31,6 +34,8 @@ public class CatEars implements ModInitializer {
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+
+	private net.minecraft.world.item.Items builtin;
 
 	@Override
 	public void onInitialize() {
@@ -44,10 +49,7 @@ public class CatEars implements ModInitializer {
 		BlockEntities.initialize();
 		MenuTypes.initialize();
 		Screens.initialize();
-		//CatNoises.initialize();
-		//ItemTooltipCallback.EVENT.register((stack, context, type, tooltip) -> {
-		//	tooltip.add(Component.translatable("item.pixton.cat_ears", ":3").withStyle(ChatFormatting.GOLD));
-		//});
+
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
 			dispatcher.register(Commands.literal("test").executes(context -> {
 				context.getSource().sendSuccess(() -> Component.literal("test successful"), false);
@@ -69,12 +71,19 @@ public class CatEars implements ModInitializer {
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			while (meow.consumeClick()) {
 				if (client.player != null) {
-					//client.player.sendSystemMessage(Component.literal("Key Pressed!"));
 					final ItemStack slot = client.player.getItemBySlot(EquipmentSlot.HEAD);				
 					if (slot.is(Items.CAT_EARS) || slot.is(Items.BLACK_CAT_EARS)) {
 						client.player.playSound(SoundEvents.CAT_PURREOW_BABY.value(), 2f, 0.7f);
+						if (client.player.isHolding(builtin.GLASS_BOTTLE)) {
+							//client.player.addItem(Items.BOTTLE.getDefaultInstance());
+							client.player.setItemInHand(InteractionHand.MAIN_HAND, Items.BOTTLE.getDefaultInstance());
+						}
 					} else if (slot.is(Items.FOP_EARS)) {
 						client.player.playSound(SoundEvents.FOX_SCREECH, 2f, 0.7f);
+						if (client.player.isHolding(builtin.GLASS_BOTTLE)) {
+							//client.player.addItem(Items.BOTTLE.getDefaultInstance());
+							client.player.setItemInHand(InteractionHand.MAIN_HAND, Items.BOTTLE.getDefaultInstance());
+						}
 					} else {
 						LOGGER.info("nah");
 					}
@@ -109,7 +118,6 @@ public class CatEars implements ModInitializer {
 		});
 
 		ItemComponentTooltipProviderRegistry.addAfter(DataComponents.DAMAGE, Components.TOOLTIP);
-		/*serverPlayerEntity.getAdvancementTracker().getProgress(advancement).isDone() */
 		
 		LOGGER.info("Loaded, enjoy your cat ears :3");
 	};

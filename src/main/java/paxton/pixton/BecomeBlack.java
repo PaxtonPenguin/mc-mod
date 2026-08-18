@@ -30,8 +30,6 @@ public class BecomeBlack extends MobEffect {
 			player.setItemSlot(EquipmentSlot.HEAD, Items.BLACK_CAT_EARS.getDefaultInstance());
 			player.setItemSlot(EquipmentSlot.LEGS, Items.BLACK_CAT_TAIL.getDefaultInstance());
 			player.setAttached(Save.isFurry, "black");
-			
-			//yeah.add(103, Items.CAT_EARS.getDefaultInstance());
 		}
 
 		return super.applyEffectTick(level, entity, amplifier);

@@ -47,6 +47,9 @@ public class Items {
 
 	public static final Holder<MobEffect> BECOMEFOP = Registry.registerForHolder(BuiltInRegistries.MOB_EFFECT, Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "becomefop"), new BecomeFop());
 
+	public static final Holder<MobEffect> RANDOM = Registry.registerForHolder(BuiltInRegistries.MOB_EFFECT, Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "random"), new RandomEffect());
+
+
     public static final Item DUD = register(ItemIds.DUD, Item::new, new Item.Properties().component(Components.TOOLTIP, new Tooltip("you got the dud card")));
 
 	//public static final Item ORB = register(ItemIds.ORB, Item::new, new Item.Properties());
@@ -71,6 +74,12 @@ public class Items {
 		ItemIds.FOP_ORB,
 		Item::new,
 		new Item.Properties().food(FopOrb.ORB_COMPONENT, FopOrb.ORB_CONSUMABLE_COMPONENT).component(Components.TOOLTIP, new Tooltip("Wait...why can you eat this"))
+	);
+
+	public static final Item BOTTLE = register(
+		ItemIds.BOTTLE,
+		Item::new,
+		new Item.Properties().food(Bottle.BOTTLE_COMPONENT, Bottle.BOTTLE_CONSUMABLE_COMPONENT).component(Components.TOOLTIP, new Tooltip("Probably not a good idea to drink this"))
 	);
 	
 	public static final Item CAT_EARS = register(ItemIds.CAT_EARS, properties -> new cat_ears(Material.INSTANCE, ArmorType.HELMET, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("meow :3")).component(DataComponents.UNBREAKABLE, Unit.INSTANCE));
@@ -107,6 +116,7 @@ public class Items {
 			output.accept(Items.DUD);
 			output.accept(Blocks.GMOD.asItem());
 			output.accept(Blocks.SUFRAISEII.asItem());
+			output.accept(Items.BOTTLE);
 		})
 		.build();
 	
