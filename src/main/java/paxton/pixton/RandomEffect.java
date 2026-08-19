@@ -4,7 +4,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.*;
 import java.util.Random;
@@ -27,7 +26,6 @@ public class RandomEffect extends MobEffect {
 	@Override
 	public boolean applyEffectTick(ServerLevel level, LivingEntity entity, int amplifier) {
 		if (entity instanceof Player player) {
-			((Player) entity).giveExperiencePoints(1 << amplifier); // Higher amplifier gives you experience faster
             final Random r = new Random();
 	        final int r1 = r.nextInt(3);
 	        final int r2 = r.nextInt(3);
@@ -35,11 +33,11 @@ public class RandomEffect extends MobEffect {
 
             final MobEffectInstance white = new MobEffectInstance(Items.BECOME, r1);
             final MobEffectInstance black = new MobEffectInstance(Items.BECOMEBLACK, r2);
-            final MobEffectInstance fop = new MobEffectInstance(Items.BECOMEFOP, r1);
+            final MobEffectInstance fop = new MobEffectInstance(Items.BECOMEFOP, r3);
 
             player.addEffect(white);
             player.addEffect(black);
-            player.addEffect(black);
+            player.addEffect(fop);
 		}
 
 		return super.applyEffectTick(level, entity, amplifier);

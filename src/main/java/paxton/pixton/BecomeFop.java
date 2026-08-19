@@ -25,8 +25,6 @@ public class BecomeFop extends MobEffect {
 	@Override
 	public boolean applyEffectTick(ServerLevel level, LivingEntity entity, int amplifier) {
 		if (entity instanceof Player player) {
-			((Player) entity).giveExperiencePoints(1 << amplifier); // Higher amplifier gives you experience faster
-
 			player.setItemSlot(EquipmentSlot.HEAD, Items.FOP_EARS.getDefaultInstance());
 			player.setItemSlot(EquipmentSlot.LEGS, Items.FOP_TAIL.getDefaultInstance());
 			player.setAttached(Save.isFurry, "fox");
