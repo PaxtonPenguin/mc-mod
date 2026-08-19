@@ -18,6 +18,10 @@
 		"main": [
 			"paxton.pixton.CatEars"
 		],
+		"client": [
+			"paxton.pixton.Screens",
+			"paxton.pixton.KeyMappings"
+		],
 		"fabric-datagen": [ 
      		 "paxton.pixton.DataGen"
     	] 

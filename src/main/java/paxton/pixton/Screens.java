@@ -1,15 +1,11 @@
 package paxton.pixton;
 
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.fabricmc.api.ModInitializer;
+import net.fabricmc.api.ClientModInitializer;
 
-public class Screens implements ModInitializer {
+public class Screens implements ClientModInitializer {
     @Override
-	public void onInitialize() {
-		MenuScreens.register(MenuTypes.PEDESTAL, PedestalScreen::new);
-	}
-
-	public static void initialize() {
+	public void onInitializeClient() {
 		MenuScreens.register(MenuTypes.PEDESTAL, PedestalScreen::new);
 	}
 }

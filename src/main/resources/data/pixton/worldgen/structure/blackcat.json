@@ -11,10 +11,10 @@
   "start_height": {
     "type": "uniform",
     "min_inclusive": {
-      "absolute": 20
+      "absolute": 30
     },
     "max_inclusive": {
-      "absolute": 40
+      "absolute": 60
     }
   }
 }

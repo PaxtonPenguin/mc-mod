@@ -1,30 +1,20 @@
 package paxton.pixton;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
-import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.item.v1.ItemComponentTooltipProviderRegistry;
 
 import net.minecraft.resources.Identifier;
 import net.minecraft.network.chat.Component;
-import net.minecraft.client.KeyMapping;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.InteractionHand;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.brigadier.Command;
 
 public class CatEars implements ModInitializer {
@@ -34,8 +24,6 @@ public class CatEars implements ModInitializer {
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-
-	private net.minecraft.world.item.Items builtin;
 
 	@Override
 	public void onInitialize() {
@@ -48,55 +36,12 @@ public class CatEars implements ModInitializer {
 		Blocks.initialize();
 		BlockEntities.initialize();
 		MenuTypes.initialize();
-		Screens.initialize();
 
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
 			dispatcher.register(Commands.literal("test").executes(context -> {
 				context.getSource().sendSuccess(() -> Component.literal("test successful"), false);
 				return 1;
 			}));
-		});
-
-		KeyMapping.Category CATEGORY = KeyMapping.Category.register(
-			Identifier.fromNamespaceAndPath(MOD_ID, "custom_category"));
-			KeyMapping meow = KeyMappingHelper.registerKeyMapping(
-				new KeyMapping(
-					"key.pixton.meow", // The translation key for the key mapping.
-					InputConstants.Type.KEYSYM, // The type of the keybinding; KEYSYM for keyboard, MOUSE for mouse.
-					InputConstants.KEY_M, // The keycode of the key.
-					CATEGORY // The category of the mapping.
-				)
-			);
-		
-		ClientTickEvents.END_CLIENT_TICK.register(client -> {
-			while (meow.consumeClick()) {
-				if (client.player != null) {
-					final ItemStack slot = client.player.getItemBySlot(EquipmentSlot.HEAD);				
-					if (slot.is(Items.CAT_EARS) || slot.is(Items.BLACK_CAT_EARS)) {
-						client.player.playSound(SoundEvents.CAT_PURREOW_BABY.value(), 2f, 0.7f);
-						if (client.player.isHolding(builtin.GLASS_BOTTLE)) {
-							//client.player.addItem(Items.BOTTLE.getDefaultInstance());
-							client.player.setItemInHand(InteractionHand.MAIN_HAND, Items.BOTTLE.getDefaultInstance());
-						}
-						if (client.player.isHolding(builtin.EGG)) {
-							//client.player.addItem(Items.BOTTLE.getDefaultInstance());
-							client.player.setItemInHand(InteractionHand.MAIN_HAND, builtin.CAT_SPAWN_EGG.getDefaultInstance());
-						}
-					} else if (slot.is(Items.FOP_EARS)) {
-						client.player.playSound(SoundEvents.FOX_SCREECH, 2f, 0.7f);
-						if (client.player.isHolding(builtin.GLASS_BOTTLE)) {
-							//client.player.addItem(Items.BOTTLE.getDefaultInstance());
-							client.player.setItemInHand(InteractionHand.MAIN_HAND, Items.BOTTLE.getDefaultInstance());
-						}
-						if (client.player.isHolding(builtin.EGG)) {
-							//client.player.addItem(Items.BOTTLE.getDefaultInstance());
-							client.player.setItemInHand(InteractionHand.MAIN_HAND, builtin.FOX_SPAWN_EGG.getDefaultInstance());
-						}
-					} else {
-						LOGGER.info("nah");
-					}
-				}
-			}
 		});
 
 		Command<CommandSourceStack> command = context -> {
