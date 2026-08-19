@@ -5,8 +5,10 @@
 	"textures": {
 		"1": "pixton:block/white_tuff_side",
 		"3": "pixton:block/white_tuff_bottom",
-		"4": "pixton:block/white_tuff_top"
+		"4": "pixton:block/white_tuff_top",
+		"particle": "pixton:block/white_tuff_side"
 	},
+	"parent": "block/block",
 	"elements": [
 		{
 			"from": [0, 0, 0],

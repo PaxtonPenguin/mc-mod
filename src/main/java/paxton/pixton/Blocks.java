@@ -39,7 +39,7 @@ public class Blocks {
     public static final Block PEDESTAL = register(
 		BlockIds.PEDESTAL,
 		Pedestal::new,
-		BlockBehaviour.Properties.of()
+		BlockBehaviour.Properties.of().noOcclusion()
 );
 
 	public static final Block SUFRAISEII = register(
@@ -49,6 +49,8 @@ public class Blocks {
 );
 
 	public static final Block WHITE_TUFF = register(BlockIds.WHITE_TUFF, Block::new, BlockBehaviour.Properties.of().sound(SoundType.STONE));
+
+	public static final Block SHELF = register(BlockIds.SHELF, Block::new, BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion());
 
     public static void initialize() {
 	}

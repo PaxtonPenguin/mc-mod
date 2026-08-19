@@ -19,4 +19,6 @@ public class BlockIds {
 
     public static final BlockItemId SUFRAISEII = create("sufraiseii");
 
+    public static final BlockItemId SHELF = create("shelf");
+
 }

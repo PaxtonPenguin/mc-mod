@@ -49,7 +49,6 @@ public class Items {
 
 	public static final Holder<MobEffect> RANDOM = Registry.registerForHolder(BuiltInRegistries.MOB_EFFECT, Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "random"), new RandomEffect());
 
-
     public static final Item DUD = register(ItemIds.DUD, Item::new, new Item.Properties().component(Components.TOOLTIP, new Tooltip("you got the dud card")));
 
 	//public static final Item ORB = register(ItemIds.ORB, Item::new, new Item.Properties());
@@ -103,20 +102,21 @@ public class Items {
 		.title(Component.translatable("creativeTab.pixton"))
 		.displayItems((params, output) -> {
 			output.accept(Items.CAT_EARS);
+			output.accept(Items.CAT_TAIL);
 			output.accept(Items.BLACK_CAT_EARS);
+			output.accept(Items.BLACK_CAT_TAIL);
 			output.accept(Items.FOP_EARS);
+			output.accept(Items.FOP_TAIL);
 			output.accept(Items.ORB);
 			output.accept(Items.DARK_ORB);
 			output.accept(Items.FOP_ORB);
 			output.accept(Blocks.PEDESTAL.asItem());
 			output.accept(Blocks.WHITE_TUFF.asItem());
-			output.accept(Items.CAT_TAIL);
-			output.accept(Items.BLACK_CAT_TAIL);
-			output.accept(Items.FOP_TAIL);
 			output.accept(Items.DUD);
 			output.accept(Blocks.GMOD.asItem());
 			output.accept(Blocks.SUFRAISEII.asItem());
 			output.accept(Items.BOTTLE);
+			output.accept(Blocks.SHELF.asItem());
 		})
 		.build();
 	

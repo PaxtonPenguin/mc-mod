@@ -78,11 +78,19 @@ public class CatEars implements ModInitializer {
 							//client.player.addItem(Items.BOTTLE.getDefaultInstance());
 							client.player.setItemInHand(InteractionHand.MAIN_HAND, Items.BOTTLE.getDefaultInstance());
 						}
+						if (client.player.isHolding(builtin.EGG)) {
+							//client.player.addItem(Items.BOTTLE.getDefaultInstance());
+							client.player.setItemInHand(InteractionHand.MAIN_HAND, builtin.CAT_SPAWN_EGG.getDefaultInstance());
+						}
 					} else if (slot.is(Items.FOP_EARS)) {
 						client.player.playSound(SoundEvents.FOX_SCREECH, 2f, 0.7f);
 						if (client.player.isHolding(builtin.GLASS_BOTTLE)) {
 							//client.player.addItem(Items.BOTTLE.getDefaultInstance());
 							client.player.setItemInHand(InteractionHand.MAIN_HAND, Items.BOTTLE.getDefaultInstance());
+						}
+						if (client.player.isHolding(builtin.EGG)) {
+							//client.player.addItem(Items.BOTTLE.getDefaultInstance());
+							client.player.setItemInHand(InteractionHand.MAIN_HAND, builtin.FOX_SPAWN_EGG.getDefaultInstance());
 						}
 					} else {
 						LOGGER.info("nah");
