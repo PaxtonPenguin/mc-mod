@@ -32,4 +32,6 @@ public class ItemIds {
 	public static final ResourceKey<Item> DUD = create("dud");
 
 	public static final ResourceKey<Item> BOTTLE = create("bottle");
+
+	public static final ResourceKey<Item> VINYL = create("vinyl");
 }

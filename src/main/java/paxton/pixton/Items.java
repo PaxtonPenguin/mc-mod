@@ -8,6 +8,7 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.JukeboxPlayable;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.core.Registry;
 import java.util.function.Function;
@@ -50,6 +51,8 @@ public class Items {
 	public static final Holder<MobEffect> RANDOM = Registry.registerForHolder(BuiltInRegistries.MOB_EFFECT, Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "random"), new RandomEffect());
 
     public static final Item DUD = register(ItemIds.DUD, Item::new, new Item.Properties().component(Components.TOOLTIP, new Tooltip("you got the dud card")));
+
+	public static final Item VINYL = register(ItemIds.VINYL, Item::new, new Item.Properties().component(Components.TOOLTIP, new Tooltip("a blank vinyl record")).jukeboxPlayable(Songs.INFERNODISC));
 
 	//public static final Item ORB = register(ItemIds.ORB, Item::new, new Item.Properties());
 
@@ -117,6 +120,7 @@ public class Items {
 			output.accept(Blocks.SUFRAISEII.asItem());
 			output.accept(Items.BOTTLE);
 			output.accept(Blocks.SHELF.asItem());
+			output.accept(Items.VINYL);
 		})
 		.build();
 	

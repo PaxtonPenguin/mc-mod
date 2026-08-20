@@ -36,6 +36,7 @@ public class CatEars implements ModInitializer {
 		Blocks.initialize();
 		BlockEntities.initialize();
 		MenuTypes.initialize();
+		Songs.initialize();
 
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
 			dispatcher.register(Commands.literal("test").executes(context -> {
@@ -48,15 +49,15 @@ public class CatEars implements ModInitializer {
 				final ServerPlayer player = context.getSource().getPlayer();
 				final String gotIt = player.getAttached(Save.isFurry);
 				LOGGER.info(gotIt);
-				if (gotIt == "white") {
+				if (gotIt.equals("white")) {
 					player.setItemSlot(EquipmentSlot.HEAD, Items.CAT_EARS.getDefaultInstance());
 					player.setItemSlot(EquipmentSlot.LEGS, Items.CAT_TAIL.getDefaultInstance());
 					context.getSource().sendSuccess(() -> Component.literal("You became a Cat again"), false);
-				} else if (gotIt == "black") {
+				} else if (gotIt.equals("black")) {
 					player.setItemSlot(EquipmentSlot.HEAD, Items.BLACK_CAT_EARS.getDefaultInstance());
 					player.setItemSlot(EquipmentSlot.LEGS, Items.BLACK_CAT_TAIL.getDefaultInstance());
 					context.getSource().sendSuccess(() -> Component.literal("You became a Cat again"), false);
-				} else if (gotIt == "fox") {
+				} else if (gotIt.equals("fox")) {
 					player.setItemSlot(EquipmentSlot.HEAD, Items.FOP_EARS.getDefaultInstance());
 					player.setItemSlot(EquipmentSlot.LEGS, Items.FOP_TAIL.getDefaultInstance());
 					context.getSource().sendSuccess(() -> Component.literal("You became a Fox again"), false);
