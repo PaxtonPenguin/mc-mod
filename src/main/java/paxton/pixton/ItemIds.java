@@ -4,11 +4,17 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.alchemy.Potion;
 
 public class ItemIds {
     public static ResourceKey<Item> create(String name) {
 		// Create the item key.
 		return ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(CatEars.MOD_ID, name));
+	}
+
+	private static ResourceKey<Potion> createpotion(String name) {
+		Identifier id = Identifier.fromNamespaceAndPath(CatEars.MOD_ID, name);
+		return ResourceKey.create(Registries.POTION, id);
 	}
 
     public static final ResourceKey<Item> CAT_EARS = create("cat_ears");
@@ -50,4 +56,6 @@ public class ItemIds {
 	public static final ResourceKey<Item> BABYVINYL = create("babyvinyl");
 
 	public static final ResourceKey<Item> BABY = create("baby");
+
+	public static final ResourceKey<Potion> BECOME_POTION = createpotion("becomepotion");
 }

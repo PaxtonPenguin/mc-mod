@@ -3,7 +3,7 @@ package paxton.pixton;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.item.v1.ItemComponentTooltipProviderRegistry;
-
+import net.fabricmc.fabric.api.registry.FabricPotionBrewingBuilder;
 import net.minecraft.resources.Identifier;
 import net.minecraft.network.chat.Component;
 import net.minecraft.commands.CommandSourceStack;
@@ -11,6 +11,7 @@ import net.minecraft.commands.Commands;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.alchemy.Potions;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -72,6 +73,17 @@ public class CatEars implements ModInitializer {
 		});
 
 		ItemComponentTooltipProviderRegistry.addAfter(DataComponents.DAMAGE, Components.TOOLTIP);
+
+		FabricPotionBrewingBuilder.BUILD.register(builder -> {
+			builder.addMix(
+			// Input potion.
+			Potions.WATER,
+			// Ingredient
+			Items.BABY,
+			// Output potion.
+			Items.BECOME_POTION
+			);
+		});
 		
 		LOGGER.info("Loaded, enjoy your cat ears :3");
 	};

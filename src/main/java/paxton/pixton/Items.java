@@ -5,10 +5,10 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.JukeboxPlayable;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.core.Registry;
 import java.util.function.Function;
@@ -17,6 +17,7 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Unit;
+import net.minecraft.world.item.alchemy.Potion;
 
 public class Items {
     public static Item register(ResourceKey<Item> itemKey, Function<Item.Properties, Item> itemFactory, Item.Properties settings) {
@@ -105,6 +106,19 @@ public class Items {
 	public static final Item FOP_TAIL = register(ItemIds.FOP_TAIL, properties -> new fop_tail(Material.INSTANCE, ArmorType.LEGGINGS, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("fun fact: you need ears to make noises")).component(DataComponents.UNBREAKABLE, Unit.INSTANCE));
 
 	public static final Item BABY = register(ItemIds.BABY, Item::new, new Item.Properties().component(Components.TOOLTIP, new Tooltip("everything you do")));
+
+	public static final Holder<Potion> BECOME_POTION =
+		Registry.registerForHolder(
+				BuiltInRegistries.POTION,
+				ItemIds.BECOME_POTION,
+				new Potion("random",
+						new MobEffectInstance(
+								RANDOM,
+								1,
+								0
+						)
+				)
+		);
 
 	public static final ResourceKey<CreativeModeTab> CUSTOM_CREATIVE_TAB_KEY = ResourceKey.create(
 		BuiltInRegistries.CREATIVE_MODE_TAB.key(), Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "creative_tab")

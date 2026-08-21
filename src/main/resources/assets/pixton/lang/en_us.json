@@ -35,5 +35,10 @@
   "sound.pixton.babysong": "Jango9 - Babysong",
   "item.pixton.babyvinyl": "Babysong LP",
   "item.pixton.baby": "The PBN Baby",
-  "block.pixton.bab": "PBN Block"
+  "block.pixton.bab": "PBN Block",
+  "effect.pixton.random": "Random Become",
+  "item.minecraft.potion.effect.random": "Potion of Random Become",
+  "item.minecraft.lingering_potion.effect.random": "Lingering Potion of Random Become",
+  "item.minecraft.splash_potion.effect.random": "Splash Potion of Random Become",
+  "item.minecraft.tipped_arrow.effect.random": "Arrow of Random Become"
 }
