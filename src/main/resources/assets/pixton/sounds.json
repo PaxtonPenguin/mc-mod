@@ -10,5 +10,9 @@
   "weatheredinferno": {
     "subtitle": "sound.pixton.weatheredinferno",
     "sounds": ["pixton:weatheredinferno"]
+  },
+  "babysong": {
+    "subtitle": "sound.pixton.babysong",
+    "sounds": ["pixton:babysong"]
   }
 }

@@ -24,11 +24,16 @@
   "sound.pixton.inferno": "Boards of Canada - Inferno",
   "jukebox_song.pixton.slightlyweathered": "Boards of Canada? - Inferno?",
   "sound.pixton.slightlyweathered": "Boards of Canada? - Inferno?",
-  "jukebox_song.pixton.weatheredinferno": "Boards of Canada? - Inferno?",
+  "jukebox_song.pixton.weatheredinferno": "Not Boards of Canada - Not Inferno",
   "sound.pixton.weatheredinferno": "Not Boards of Canada - Not Inferno",
   "item.pixton.slightlyweathered": "Lightly Weathered Inferno LP",
   "item.pixton.weatheredinferno": "Weathered Inferno LP",
   "item.pixton.waxedinferno": "Waxed Inferno LP",
   "item.pixton.waxedslightlyweathered": "Waxed Lightly Weathered Inferno LP",
-  "item.pixton.waxedweatheredinferno": "Waxed Weathered Inferno LP"
+  "item.pixton.waxedweatheredinferno": "Waxed Weathered Inferno LP",
+  "jukebox_song.pixton.babydisc": "Jango9 - Babysong",
+  "sound.pixton.babysong": "Jango9 - Babysong",
+  "item.pixton.babyvinyl": "Babysong LP",
+  "item.pixton.baby": "The PBN Baby",
+  "block.pixton.bab": "PBN Block"
 }

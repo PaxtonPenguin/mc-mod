@@ -52,6 +52,8 @@ public class Blocks {
 
 	public static final Block SHELF = register(BlockIds.SHELF, Block::new, BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion());
 
+	public static final Block BABY = register(BlockIds.BABY, Block::new, BlockBehaviour.Properties.of().sound(SoundType.ANVIL));
+
     public static void initialize() {
 	}
 }

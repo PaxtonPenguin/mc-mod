@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        "pixton:vinyl",
+        "pixton:baby"
+    ],
+    "result": {
+        "count": 1,
+        "id": "pixton:babyvinyl"
+    }
+}

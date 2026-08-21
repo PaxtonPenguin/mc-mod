@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        "pixton:gmod",
+        "pixton:white_tuff"
+    ],
+    "result": {
+        "count": 1,
+        "id": "pixton:baby"
+    }
+}

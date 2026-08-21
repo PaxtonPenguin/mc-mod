@@ -66,11 +66,7 @@ public class Items {
 
 	public static final Item WAXEDWEATHEREDINFERNO = register(ItemIds.WAXEDWEATHEREDINFERNO, Item::new, new Item.Properties().component(Components.TOOLTIP, new Tooltip("what the fuck is this (waxed)")).jukeboxPlayable(Songs.WEATHEREDINFERNODISC));
 
-	//public static final Item ORB = register(ItemIds.ORB, Item::new, new Item.Properties());
-
-	//public static final Item DARK_ORB = register(ItemIds.DARK_ORB, Item::new, new Item.Properties());
-
-	//public static final Item FOP_ORB = register(ItemIds.FOP_ORB, Item::new, new Item.Properties());
+	public static final Item BABYVINYL = register(ItemIds.BABYVINYL, Item::new, new Item.Properties().component(Components.TOOLTIP, new Tooltip("autozone")).jukeboxPlayable(Songs.BABYDISC));
 
 	public static final Item ORB = register(
 		ItemIds.ORB,
@@ -108,6 +104,8 @@ public class Items {
 
 	public static final Item FOP_TAIL = register(ItemIds.FOP_TAIL, properties -> new fop_tail(Material.INSTANCE, ArmorType.LEGGINGS, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("fun fact: you need ears to make noises")).component(DataComponents.UNBREAKABLE, Unit.INSTANCE));
 
+	public static final Item BABY = register(ItemIds.BABY, Item::new, new Item.Properties().component(Components.TOOLTIP, new Tooltip("everything you do")));
+
 	public static final ResourceKey<CreativeModeTab> CUSTOM_CREATIVE_TAB_KEY = ResourceKey.create(
 		BuiltInRegistries.CREATIVE_MODE_TAB.key(), Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "creative_tab")
 	);
@@ -139,6 +137,9 @@ public class Items {
 			output.accept(Items.WAXEDINFERNO);
 			output.accept(Items.WAXEDSLIGHTLYWEATHERED);
 			output.accept(Items.WAXEDWEATHEREDINFERNO);
+			output.accept(Items.BABYVINYL);
+			output.accept(Items.BABY);
+			output.accept(Blocks.BABY.asItem());
 		})
 		.build();
 	

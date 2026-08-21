@@ -46,4 +46,8 @@ public class ItemIds {
 	public static final ResourceKey<Item> WAXEDSLIGHTLYWEATHERED = create("waxedslightlyweathered");
 
 	public static final ResourceKey<Item> WAXEDWEATHEREDINFERNO = create("waxedweatheredinferno");
+
+	public static final ResourceKey<Item> BABYVINYL = create("babyvinyl");
+
+	public static final ResourceKey<Item> BABY = create("baby");
 }

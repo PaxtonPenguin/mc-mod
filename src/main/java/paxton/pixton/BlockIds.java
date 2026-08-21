@@ -21,4 +21,5 @@ public class BlockIds {
 
     public static final BlockItemId SHELF = create("shelf");
 
+    public static final BlockItemId BABY = create("bab");
 }
