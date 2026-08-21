@@ -1,0 +1,8 @@
+{
+  "comparator_output": 1,
+  "description": {
+    "translate": "jukebox_song.pixton.weatheredinferno"
+  },
+  "length_in_seconds": 4200.0,
+  "sound_event": "pixton:weatheredinferno"
+}

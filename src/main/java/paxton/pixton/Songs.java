@@ -49,8 +49,15 @@ public class Songs {
 
    static ResourceKey<JukeboxSong> INFERNODISC = create("inferno");
 
+   static ResourceKey<JukeboxSong> SLIGHTLYWEATHEREDDISC = create("slightlyweathered");
+
+   static ResourceKey<JukeboxSong> WEATHEREDINFERNODISC = create("weatheredinferno");
+
+
    static void bootstrap(final BootstrapContext<JukeboxSong> context) {
-      register(context, INFERNODISC, INFERNOSOUND, 271, 1);
+      register(context, INFERNODISC, INFERNOSOUND, 4200, 1);
+      register(context, SLIGHTLYWEATHEREDDISC, SLIGHTLYWEATHERED, 4200, 1);
+      register(context, WEATHEREDINFERNODISC, WEATHEREDINFERNO, 4200, 1);
    }
 
    private static SoundEvent registerSound(String id) {
@@ -59,6 +66,10 @@ public class Songs {
 	}
 
    public static final Reference<SoundEvent> INFERNOSOUND = registerForHolder("infernosound");
+
+   public static final Reference<SoundEvent> SLIGHTLYWEATHERED = registerForHolder("slightlyweathered");
+
+   public static final Reference<SoundEvent> WEATHEREDINFERNO = registerForHolder("weatheredinferno");
 
    public static void initialize() {
    }

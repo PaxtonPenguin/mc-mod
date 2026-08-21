@@ -18,5 +18,17 @@
   "item.pixton.dud": "Dud Card",
   "item.pixton.bottle": "Bottle of Mysterious Liquid",
   "block.pixton.shelf": "Shelf",
-  "item.pixton.vinyl": "Blank Record"
+  "item.pixton.vinyl": "Blank Record",
+  "item.pixton.inferno": "Inferno LP",
+  "jukebox_song.pixton.inferno": "Boards of Canada - Inferno",
+  "sound.pixton.inferno": "Boards of Canada - Inferno",
+  "jukebox_song.pixton.slightlyweathered": "Boards of Canada? - Inferno?",
+  "sound.pixton.slightlyweathered": "Boards of Canada? - Inferno?",
+  "jukebox_song.pixton.weatheredinferno": "Boards of Canada? - Inferno?",
+  "sound.pixton.weatheredinferno": "Not Boards of Canada - Not Inferno",
+  "item.pixton.slightlyweathered": "Lightly Weathered Inferno LP",
+  "item.pixton.weatheredinferno": "Weathered Inferno LP",
+  "item.pixton.waxedinferno": "Waxed Inferno LP",
+  "item.pixton.waxedslightlyweathered": "Waxed Lightly Weathered Inferno LP",
+  "item.pixton.waxedweatheredinferno": "Waxed Weathered Inferno LP"
 }

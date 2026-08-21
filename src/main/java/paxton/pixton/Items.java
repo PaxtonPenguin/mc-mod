@@ -52,7 +52,19 @@ public class Items {
 
     public static final Item DUD = register(ItemIds.DUD, Item::new, new Item.Properties().component(Components.TOOLTIP, new Tooltip("you got the dud card")));
 
-	public static final Item VINYL = register(ItemIds.VINYL, Item::new, new Item.Properties().component(Components.TOOLTIP, new Tooltip("a blank vinyl record")).jukeboxPlayable(Songs.INFERNODISC));
+	public static final Item VINYL = register(ItemIds.VINYL, Item::new, new Item.Properties().component(Components.TOOLTIP, new Tooltip("a blank vinyl record")));
+
+	public static final Item INFERNO = register(ItemIds.INFERNO, Item::new, new Item.Properties().component(Components.TOOLTIP, new Tooltip("wow, inferno")).jukeboxPlayable(Songs.INFERNODISC));
+
+	public static final Item SLIGHTLYWEATHERED = register(ItemIds.SLIGHTLYWEATHERED, Item::new, new Item.Properties().component(Components.TOOLTIP, new Tooltip("uhhh...inferno i guess")).jukeboxPlayable(Songs.SLIGHTLYWEATHEREDDISC));
+
+	public static final Item WEATHEREDINFERNO = register(ItemIds.WEATHEREDINFERNO, Item::new, new Item.Properties().component(Components.TOOLTIP, new Tooltip("what the fuck is this")).jukeboxPlayable(Songs.WEATHEREDINFERNODISC));
+
+	public static final Item WAXEDINFERNO = register(ItemIds.WAXEDINFERNO, Item::new, new Item.Properties().component(Components.TOOLTIP, new Tooltip("wow, waxed inferno")).jukeboxPlayable(Songs.INFERNODISC));
+
+	public static final Item WAXEDSLIGHTLYWEATHERED = register(ItemIds.WAXEDSLIGHTLYWEATHERED, Item::new, new Item.Properties().component(Components.TOOLTIP, new Tooltip("uhhh...waxed inferno i guess")).jukeboxPlayable(Songs.SLIGHTLYWEATHEREDDISC));
+
+	public static final Item WAXEDWEATHEREDINFERNO = register(ItemIds.WAXEDWEATHEREDINFERNO, Item::new, new Item.Properties().component(Components.TOOLTIP, new Tooltip("what the fuck is this (waxed)")).jukeboxPlayable(Songs.WEATHEREDINFERNODISC));
 
 	//public static final Item ORB = register(ItemIds.ORB, Item::new, new Item.Properties());
 
@@ -121,6 +133,12 @@ public class Items {
 			output.accept(Items.BOTTLE);
 			output.accept(Blocks.SHELF.asItem());
 			output.accept(Items.VINYL);
+			output.accept(Items.INFERNO);
+			output.accept(Items.SLIGHTLYWEATHERED);
+			output.accept(Items.WEATHEREDINFERNO);
+			output.accept(Items.WAXEDINFERNO);
+			output.accept(Items.WAXEDSLIGHTLYWEATHERED);
+			output.accept(Items.WAXEDWEATHEREDINFERNO);
 		})
 		.build();
 	

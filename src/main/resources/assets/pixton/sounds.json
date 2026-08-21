@@ -2,5 +2,13 @@
   "infernosound": {
     "subtitle": "sound.pixton.inferno",
     "sounds": ["pixton:infernosound"]
+  },
+  "slightlyweathered": {
+    "subtitle": "sound.pixton.slightlyweathered",
+    "sounds": ["pixton:slightlyweathered"]
+  },
+  "weatheredinferno": {
+    "subtitle": "sound.pixton.weatheredinferno",
+    "sounds": ["pixton:weatheredinferno"]
   }
 }

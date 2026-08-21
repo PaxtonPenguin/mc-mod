@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        "pixton:inferno",
+        "minecraft:honeycomb"
+    ],
+    "result": {
+        "count": 1,
+        "id": "pixton:waxedinferno"
+    }
+}
