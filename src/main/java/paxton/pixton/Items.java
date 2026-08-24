@@ -99,7 +99,7 @@ public class Items {
 
 	public static final Item FOP_EARS = register(ItemIds.FOP_EARS, properties -> new fop_ears(Material.INSTANCE, ArmorType.HELMET, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("fun fact: you can bind animal noises")).component(DataComponents.UNBREAKABLE, Unit.INSTANCE));
 
-	public static final Item CAT_TAIL = register(ItemIds.CAT_TAIL, properties -> new cat_tail(Material.INSTANCE, ArmorType.LEGGINGS, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("purr :3")).component(DataComponents.UNBREAKABLE, Unit.INSTANCE));
+	public static final Item CAT_TAIL = register(ItemIds.CAT_TAIL, properties -> new cat_tail(Material.INSTANCE, ArmorType.CHESTPLATE, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("purr :3")).component(DataComponents.UNBREAKABLE, Unit.INSTANCE));
 
 	public static final Item BLACK_CAT_TAIL = register(ItemIds.BLACK_CAT_TAIL, properties -> new black_cat_tail(Material.INSTANCE, ArmorType.LEGGINGS, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("*wags tail* :3")).component(DataComponents.UNBREAKABLE, Unit.INSTANCE));
 
