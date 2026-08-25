@@ -4,7 +4,6 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.JukeboxSong;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
@@ -61,11 +60,6 @@ public class Songs {
       register(context, WEATHEREDINFERNODISC, WEATHEREDINFERNO, 4200, 1);
       register(context, BABYDISC, BABYSONG, 28, 1);
    }
-
-   private static SoundEvent registerSound(String id) {
-		Identifier identifier = Identifier.fromNamespaceAndPath("pixton", id);
-		return Registry.register(BuiltInRegistries.SOUND_EVENT, identifier, SoundEvent.createVariableRangeEvent(identifier));
-	}
 
    public static final Reference<SoundEvent> INFERNOSOUND = registerForHolder("infernosound");
 

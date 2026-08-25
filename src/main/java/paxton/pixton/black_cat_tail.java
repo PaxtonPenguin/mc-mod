@@ -13,6 +13,7 @@ import com.geckolib.animatable.client.GeoRenderProvider;
 //import com.geckolib.animatable.client.GeoRenderProvider;
 import com.geckolib.animatable.instance.AnimatableInstanceCache;
 import com.geckolib.animatable.manager.AnimatableManager;
+import com.geckolib.constant.DefaultAnimations;
 import com.geckolib.util.GeckoLibUtil;
 //import org.apache.commons.lang3.mutable.MutableObject;
 import com.geckolib.renderer.GeoArmorRenderer;
@@ -51,7 +52,7 @@ public class black_cat_tail extends Item implements GeoItem {
 
     	@Override
     	public void registerControllers(final AnimatableManager.ControllerRegistrar controllers) {
-        	// We can fill this in later
+        	controllers.add(DefaultAnimations.genericIdleController());
     	}
 
     	@Override

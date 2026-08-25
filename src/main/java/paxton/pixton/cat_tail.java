@@ -12,12 +12,10 @@ import com.geckolib.animatable.GeoItem;
 import com.geckolib.animatable.client.GeoRenderProvider;
 import com.geckolib.animatable.instance.AnimatableInstanceCache;
 import com.geckolib.animatable.manager.AnimatableManager;
-import com.geckolib.animation.AnimationController;
 import com.geckolib.constant.DefaultAnimations;
 import com.geckolib.util.GeckoLibUtil;
 import com.geckolib.renderer.GeoArmorRenderer;
 import com.geckolib.renderer.GeoItemRenderer;
-import com.geckolib.animatable.GeoAnimatable;
 
 import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
 import org.jetbrains.annotations.Nullable;
@@ -36,17 +34,17 @@ public class cat_tail extends Item implements GeoItem {
     	public void createGeoRenderer(Consumer<GeoRenderProvider> consumer) {
         	consumer.accept(new GeoRenderProvider() {
             	private final Supplier<GeoArmorRenderer<cat_tail, HumanoidRenderState>> renderer = Suppliers.memoize(() -> new GeoArmorRenderer<>(cat_tail.this));
-				//private final Supplier<GeoItemRenderer<cat_tail>> itemrenderer = Suppliers.memoize(() -> new GeoItemRenderer<>(cat_tail.this));
+				private final Supplier<GeoItemRenderer<cat_tail>> itemrenderer = Suppliers.memoize(() -> new GeoItemRenderer<>(cat_tail.this));
 
             	@Override
             	public @Nullable GeoArmorRenderer<?, ?> getGeoArmorRenderer(ItemStack itemStack, EquipmentSlot equipmentSlot) {
                 	return this.renderer.get();
             	}
 
-				/*@Override
+				@Override
            		public @Nullable GeoItemRenderer<cat_tail> getGeoItemRenderer() {
                 	return this.itemrenderer.get();
-            	}*/
+            	}
         	});
     	}
 
