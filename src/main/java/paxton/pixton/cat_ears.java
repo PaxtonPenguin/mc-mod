@@ -1,61 +1,59 @@
 package paxton.pixton;
 
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.equipment.ArmorType;
-//import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
-import java.util.function.Supplier;
-import java.util.function.Consumer;
-import com.google.common.base.Suppliers;
-import com.geckolib.animatable.GeoItem;
-import com.geckolib.animatable.client.GeoRenderProvider;
-//import com.geckolib.animatable.client.GeoRenderProvider;
-import com.geckolib.animatable.instance.AnimatableInstanceCache;
-import com.geckolib.animatable.manager.AnimatableManager;
-import com.geckolib.util.GeckoLibUtil;
-//import org.apache.commons.lang3.mutable.MutableObject;
-import com.geckolib.renderer.GeoArmorRenderer;
-import com.geckolib.renderer.GeoItemRenderer;
 
+import com.mojang.blaze3d.vertex.PoseStack;
+
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 
-import net.minecraft.world.item.equipment.ArmorMaterial;
+import eu.pb4.trinkets.api.SlotAttributes;
+import eu.pb4.trinkets.api.TrinketSlotAccess;
+import eu.pb4.trinkets.api.callback.*;
+import eu.pb4.trinkets.api.client.TrinketRenderer;
+import net.minecraft.core.Holder;
+import net.minecraft.world.entity.ai.attributes.*;
+import net.minecraft.resources.Identifier;
+import net.minecraft.client.model.*;
 
-public class cat_ears extends Item implements GeoItem {
-    	private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
-		//public static final MutableObject<Object> geoRenderProvider = new MutableObject<>();
+import paxton.pixton.models.*;
 
-    	public cat_ears(ArmorMaterial material, ArmorType type, Properties properties) {
-        	super(properties.humanoidArmor(material, type));
+public class cat_ears extends Item implements TrinketRenderer, TrinketCallback {
+		private final Holder<Attribute> hatSlotModifier;
+		private static final Identifier TEXTURE = Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "textures/entity/trinket/cat_ears.png");
+	private HumanoidModel<HumanoidRenderState> model;
+
+
+	HeadedModel chaz;
+    	public cat_ears(Properties properties) {
+        	super(properties);
+			this.hatSlotModifier = SlotAttributes.createAttributeForSlot("head/hat");
     	}
 
 		@Override
-    	public void createGeoRenderer(Consumer<GeoRenderProvider> consumer) {
-        	consumer.accept(new GeoRenderProvider() {
-            	private final Supplier<GeoArmorRenderer<cat_ears, HumanoidRenderState>> renderer = Suppliers.memoize(() -> new GeoArmorRenderer<>(cat_ears.this));
-				private final Supplier<GeoItemRenderer<cat_ears>> itemrenderer = Suppliers.memoize(() -> new GeoItemRenderer<>(cat_ears.this));
+	@Environment(EnvType.CLIENT)
+	public void submit(ItemStack stack, TrinketSlotAccess slotReference, EntityModel<? extends LivingEntityRenderState> contextModel, PoseStack matrices, SubmitNodeCollector submit, int light, LivingEntityRenderState state, float limbAngle, float limbDistance) {
+		if (state instanceof HumanoidRenderState bipedEntityRenderState) {
+			HumanoidModel<HumanoidRenderState> model = this.getModel();
+			model.setupAnim(bipedEntityRenderState);
+			TrinketRenderer.followBodyRotations(contextModel, model);
+			submit.submitModel(model, bipedEntityRenderState, matrices, model.renderType(TEXTURE), light, OverlayTexture.pack(OverlayTexture.u(0), OverlayTexture.v(false)), -1, null, state.outlineColor, null);
+		}
+	}
 
-            	@Override
-            	public @Nullable GeoArmorRenderer<?, ?> getGeoArmorRenderer(ItemStack itemStack, EquipmentSlot equipmentSlot) {
-                	return this.renderer.get();
-            	}
+	@Environment(EnvType.CLIENT)
+	private HumanoidModel<HumanoidRenderState> getModel() {
+		if (this.model == null) {
+			// Vanilla 1.17 uses EntityModels, EntityModelLoader and EntityModelLayers
+			this.model = new ears(ears.createBodyLayer().bakeRoot());
+		}
 
-				@Override
-           		public @Nullable GeoItemRenderer<cat_ears> getGeoItemRenderer() {
-                	return this.itemrenderer.get();
-            	}
-        	});
-    	}
+		return this.model;
+	}
 
-    	@Override
-    	public void registerControllers(final AnimatableManager.ControllerRegistrar controllers) {
-        	// We can fill this in later
-    	}
-
-    	@Override
-    	public AnimatableInstanceCache getAnimatableInstanceCache() {
-        	return this.geoCache;
-    	}
 	}

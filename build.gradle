@@ -20,6 +20,11 @@ repositories {
         	}
         	filter { includeGroupAndSubgroups('com.geckolib') }
     	   }
+
+	maven {
+		name = "Nucleoid"
+		url = 'https://maven.nucleoid.xyz/releases'
+	}
 }
 
 dependencies {
@@ -35,6 +40,8 @@ dependencies {
 	
 	implementation "com.geckolib:geckolib-fabric-26.2:5.5.3"
 	//implementation 'javax:javaee-api:8.0'
+
+	implementation "eu.pb4:trinkets:4.1.0-rc.1+26.2"
 }
 
 processResources {
