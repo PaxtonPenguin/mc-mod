@@ -6,6 +6,7 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.*;
+import eu.pb4.trinkets.api.*;
 
 public class Become extends MobEffect {
 	protected Become() {
@@ -25,9 +26,16 @@ public class Become extends MobEffect {
 	@Override
 	public boolean applyEffectTick(ServerLevel level, LivingEntity entity, int amplifier) {
 		if (entity instanceof Player player) {
-			player.setItemSlot(EquipmentSlot.HEAD, Items.CAT_EARS.getDefaultInstance());
-			player.setItemSlot(EquipmentSlot.LEGS, Items.CAT_TAIL.getDefaultInstance());
+			//player.setItemSlot(EquipmentSlot.HEAD, Items.CAT_EARS.getDefaultInstance());
+			//player.setItemSlot(EquipmentSlot.LEGS, Items.CAT_TAIL.getDefaultInstance());
 			player.setAttached(Save.isFurry, "white");
+			TrinketAttachment guy = TrinketsApi.getAttachment(entity);
+			TrinketInventory hat = guy.getInventory("head/hat");
+			TrinketInventory belt = guy.getInventory("legs/belt");
+			TrinketSlotAccess hatslot = new TrinketSlotAccess(hat, 0);
+			TrinketSlotAccess beltslot = new TrinketSlotAccess(belt, 0);
+			hatslot.set(Items.CAT_EARS.getDefaultInstance());
+			beltslot.set(Items.CAT_TAIL.getDefaultInstance());
 		}
 
 		return super.applyEffectTick(level, entity, amplifier);

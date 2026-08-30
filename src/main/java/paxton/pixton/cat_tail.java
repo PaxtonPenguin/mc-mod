@@ -15,7 +15,7 @@ import net.fabricmc.api.Environment;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.renderer.SubmitNodeCollector;
-import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
+import net.minecraft.client.renderer.entity.state.EntityRenderState;
 import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 
@@ -35,7 +35,7 @@ import paxton.pixton.models.*;
 public class cat_tail extends Item implements TrinketRenderer, TrinketCallback {
 		private final Holder<Attribute> beltSlotModifier;
 		private static final Identifier TEXTURE = Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "textures/entity/trinket/cat_tail.png");
-	private HumanoidModel<HumanoidRenderState> model;
+	private EntityModel<EntityRenderState> model;
 
 
     	public cat_tail(Properties properties) {
@@ -46,16 +46,18 @@ public class cat_tail extends Item implements TrinketRenderer, TrinketCallback {
 		@Override
 	@Environment(EnvType.CLIENT)
 	public void submit(ItemStack stack, TrinketSlotAccess slotReference, EntityModel<? extends LivingEntityRenderState> contextModel, PoseStack matrices, SubmitNodeCollector submit, int light, LivingEntityRenderState state, float limbAngle, float limbDistance) {
-		if (state instanceof HumanoidRenderState bipedEntityRenderState) {
-			HumanoidModel<HumanoidRenderState> model = this.getModel();
+		if (state instanceof EntityRenderState bipedEntityRenderState) {
+			EntityModel<EntityRenderState> model = this.getModel();
 			model.setupAnim(bipedEntityRenderState);
-			TrinketRenderer.followBodyRotations(contextModel, model);
+			if (model instanceof HumanoidModel body) {
+				TrinketRenderer.followBodyRotations(contextModel, body);
+			}
 			submit.submitModel(model, bipedEntityRenderState, matrices, model.renderType(TEXTURE), light, OverlayTexture.pack(OverlayTexture.u(0), OverlayTexture.v(false)), -1, null, state.outlineColor, null);
 		}
 	}
 
 	@Environment(EnvType.CLIENT)
-	private HumanoidModel<HumanoidRenderState> getModel() {
+	private EntityModel<EntityRenderState> getModel() {
 		if (this.model == null) {
 			// Vanilla 1.17 uses EntityModels, EntityModelLoader and EntityModelLayers
 			this.model = new tinkettailModel(tinkettailModel.createBodyLayer().bakeRoot());
