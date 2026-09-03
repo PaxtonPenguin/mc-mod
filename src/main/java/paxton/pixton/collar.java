@@ -32,8 +32,9 @@ import net.minecraft.resources.Identifier;
 
 import paxton.pixton.models.*;
 
-public class black_cat_tail implements TrinketRenderer, TrinketCallback {
-		private static final Identifier TEXTURE = Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "textures/entity/trinket/black_cat_tail.png");
+public class collar implements TrinketRenderer, TrinketCallback {
+		//private final Holder<Attribute> necklaceSlotModifier;
+		private static final Identifier TEXTURE = Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "textures/entity/trinket/collar.png");
 	private EntityModel<EntityRenderState> model;
 
 		@Override
@@ -53,7 +54,7 @@ public class black_cat_tail implements TrinketRenderer, TrinketCallback {
 	private EntityModel<EntityRenderState> getModel() {
 		if (this.model == null) {
 			// Vanilla 1.17 uses EntityModels, EntityModelLoader and EntityModelLayers
-			this.model = new tinkettailModel(tinkettailModel.createBodyLayer().bakeRoot());
+			this.model = new colar(colar.createBodyLayer().bakeRoot());
 		}
 
 		return this.model;

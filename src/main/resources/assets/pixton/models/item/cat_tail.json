@@ -1,5 +1,6 @@
 {
+   "parent": "minecraft:item/generated",
   "textures": {
-    "particle": "pixton:item/cat_tail"
+    "layer0": "pixton:item/cat_tail"
   }
 }

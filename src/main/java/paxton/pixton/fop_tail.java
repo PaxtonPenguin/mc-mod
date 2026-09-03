@@ -32,16 +32,9 @@ import net.minecraft.resources.Identifier;
 
 import paxton.pixton.models.*;
 
-public class fop_tail extends Item implements TrinketRenderer, TrinketCallback {
-		private final Holder<Attribute> beltSlotModifier;
+public class fop_tail implements TrinketRenderer, TrinketCallback {
 		private static final Identifier TEXTURE = Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "textures/entity/trinket/fop_tail.png");
 	private EntityModel<EntityRenderState> model;
-
-
-    	public fop_tail(Properties properties) {
-        	super(properties);
-			this.beltSlotModifier = SlotAttributes.createAttributeForSlot("legs/belt");
-    	}
 
 		@Override
 	@Environment(EnvType.CLIENT)

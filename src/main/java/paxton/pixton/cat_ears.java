@@ -23,15 +23,9 @@ import net.minecraft.client.model.*;
 
 import paxton.pixton.models.*;
 
-public class cat_ears extends Item implements TrinketRenderer, TrinketCallback {
-		private final Holder<Attribute> hatSlotModifier;
+public class cat_ears implements TrinketRenderer, TrinketCallback {
 		private static final Identifier TEXTURE = Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "textures/entity/trinket/cat_ears.png");
 	private EntityModel<EntityRenderState> model;
-
-    	public cat_ears(Properties properties) {
-        	super(properties);
-			this.hatSlotModifier = SlotAttributes.createAttributeForSlot("head/hat");
-    	}
 
 		@Override
 	@Environment(EnvType.CLIENT)

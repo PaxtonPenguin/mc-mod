@@ -12,6 +12,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.core.Registry;
 import java.util.function.Function;
+
+import eu.pb4.trinkets.api.DefaultTrinketSlots;
+import eu.pb4.trinkets.api.component.TrinketDataComponents;
+import eu.pb4.trinkets.api.component.TrinketEquippable;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
@@ -93,17 +97,19 @@ public class Items {
 		new Item.Properties().food(Bottle.BOTTLE_COMPONENT, Bottle.BOTTLE_CONSUMABLE_COMPONENT).component(Components.TOOLTIP, new Tooltip("Probably not a good idea to drink this"))
 	);
 	
-	public static final Item CAT_EARS = register(ItemIds.CAT_EARS, properties -> new cat_ears(properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("meow :3")).component(DataComponents.UNBREAKABLE, Unit.INSTANCE));
+	public static final CatEarsItem CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.CAT_EARS, new CatEarsItem());
 
 	public static final Item BLACK_CAT_EARS = register(ItemIds.BLACK_CAT_EARS, properties -> new black_cat_ears(Material.INSTANCE, ArmorType.HELMET, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("mrrp :3")).component(DataComponents.UNBREAKABLE, Unit.INSTANCE));
 
 	public static final Item FOP_EARS = register(ItemIds.FOP_EARS, properties -> new fop_ears(Material.INSTANCE, ArmorType.HELMET, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("fun fact: you can bind animal noises")).component(DataComponents.UNBREAKABLE, Unit.INSTANCE));
 
-	public static final Item CAT_TAIL = register(ItemIds.CAT_TAIL, properties -> new cat_tail(properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("purr :3")).component(DataComponents.UNBREAKABLE, Unit.INSTANCE));
+	public static final CatTailItem CAT_TAIL = Registry.register(BuiltInRegistries.ITEM, ItemIds.CAT_TAIL, new CatTailItem());
 
-	public static final Item BLACK_CAT_TAIL = register(ItemIds.BLACK_CAT_TAIL, properties -> new black_cat_tail(properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("*wags tail* :3")).component(DataComponents.UNBREAKABLE, Unit.INSTANCE));
+	public static final BlackCatTailItem BLACK_CAT_TAIL = Registry.register(BuiltInRegistries.ITEM, ItemIds.BLACK_CAT_TAIL, new BlackCatTailItem());
 
-	public static final Item FOP_TAIL = register(ItemIds.FOP_TAIL, properties -> new fop_tail(properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("fun fact: you need ears to make noises")).component(DataComponents.UNBREAKABLE, Unit.INSTANCE));
+	public static final FopTailItem FOP_TAIL = Registry.register(BuiltInRegistries.ITEM, ItemIds.FOP_TAIL, new FopTailItem());
+
+	public static final CollarItem COLLAR = Registry.register(BuiltInRegistries.ITEM, ItemIds.COLLAR, new CollarItem());
 
 	public static final Item BABY = register(ItemIds.BABY, Item::new, new Item.Properties().component(Components.TOOLTIP, new Tooltip("everything you do")));
 
@@ -154,6 +160,7 @@ public class Items {
 			output.accept(Items.BABYVINYL);
 			output.accept(Items.BABY);
 			output.accept(Blocks.BABY.asItem());
+			output.accept(Items.COLLAR);
 		})
 		.build();
 	
