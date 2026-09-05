@@ -1,0 +1,6 @@
+{
+   "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "pixton:item/green_dyed_cat_tail"
+  }
+}

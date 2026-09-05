@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        "pixton:cat_tail",
+        "minecraft:light_blue_dye"
+    ],
+    "result": {
+        "count": 1,
+        "id": "pixton:light_blue_dyed_cat_tail"
+    }
+}

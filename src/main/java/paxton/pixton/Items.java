@@ -23,6 +23,8 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.util.Unit;
 import net.minecraft.world.item.alchemy.Potion;
 
+import paxton.pixton.dyed.cat_tails.items.*;
+
 public class Items {
     public static Item register(ResourceKey<Item> itemKey, Function<Item.Properties, Item> itemFactory, Item.Properties settings) {
 		// Create the item instance.
@@ -128,6 +130,24 @@ public class Items {
 				)
 		);
 
+	//dyed shit
+	public static final WhiteCatTailItem WHITE_DYED_CAT_TAIL = Registry.register(BuiltInRegistries.ITEM, ItemIds.WHITE_DYED_CAT_TAIL, new WhiteCatTailItem());
+	public static final BlackCatTailItem BLACK_DYED_CAT_TAIL = Registry.register(BuiltInRegistries.ITEM, ItemIds.BLACK_DYED_CAT_TAIL, new BlackCatTailItem());
+	public static final RedCatTailItem RED_DYED_CAT_TAIL = Registry.register(BuiltInRegistries.ITEM, ItemIds.RED_DYED_CAT_TAIL, new RedCatTailItem());
+	public static final OrangeCatTailItem ORANGE_DYED_CAT_TAIL = Registry.register(BuiltInRegistries.ITEM, ItemIds.ORANGE_DYED_CAT_TAIL, new OrangeCatTailItem());
+	public static final YellowCatTailItem YELLOW_DYED_CAT_TAIL = Registry.register(BuiltInRegistries.ITEM, ItemIds.YELLOW_DYED_CAT_TAIL, new YellowCatTailItem());
+	public static final LimeCatTailItem LIME_DYED_CAT_TAIL = Registry.register(BuiltInRegistries.ITEM, ItemIds.LIME_DYED_CAT_TAIL, new LimeCatTailItem());
+	public static final GreenCatTailItem GREEN_DYED_CAT_TAIL = Registry.register(BuiltInRegistries.ITEM, ItemIds.GREEN_DYED_CAT_TAIL, new GreenCatTailItem());
+	public static final LightBlueCatTailItem LIGHT_BLUE_DYED_CAT_TAIL = Registry.register(BuiltInRegistries.ITEM, ItemIds.LIGHT_BLUE_DYED_CAT_TAIL, new LightBlueCatTailItem());
+	public static final CyanCatTailItem CYAN_DYED_CAT_TAIL = Registry.register(BuiltInRegistries.ITEM, ItemIds.CYAN_DYED_CAT_TAIL, new CyanCatTailItem());
+	public static final BlueCatTailItem BLUE_DYED_CAT_TAIL = Registry.register(BuiltInRegistries.ITEM, ItemIds.BLUE_DYED_CAT_TAIL, new BlueCatTailItem());
+	public static final PinkCatTailItem PINK_DYED_CAT_TAIL = Registry.register(BuiltInRegistries.ITEM, ItemIds.PINK_DYED_CAT_TAIL, new PinkCatTailItem());
+	public static final MagentaCatTailItem MAGENTA_DYED_CAT_TAIL = Registry.register(BuiltInRegistries.ITEM, ItemIds.MAGENTA_DYED_CAT_TAIL, new MagentaCatTailItem());
+	public static final PurpleCatTailItem PURPLE_DYED_CAT_TAIL = Registry.register(BuiltInRegistries.ITEM, ItemIds.PURPLE_DYED_CAT_TAIL, new PurpleCatTailItem());
+	public static final GrayCatTailItem GRAY_DYED_CAT_TAIL = Registry.register(BuiltInRegistries.ITEM, ItemIds.GRAY_DYED_CAT_TAIL, new GrayCatTailItem());
+	public static final LightGrayCatTailItem LIGHT_GRAY_DYED_CAT_TAIL = Registry.register(BuiltInRegistries.ITEM, ItemIds.LIGHT_GRAY_DYED_CAT_TAIL, new LightGrayCatTailItem());
+	public static final BrownCatTailItem BROWN_DYED_CAT_TAIL = Registry.register(BuiltInRegistries.ITEM, ItemIds.BROWN_DYED_CAT_TAIL, new BrownCatTailItem());
+
 	public static final ResourceKey<CreativeModeTab> CUSTOM_CREATIVE_TAB_KEY = ResourceKey.create(
 		BuiltInRegistries.CREATIVE_MODE_TAB.key(), Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "creative_tab")
 	);
@@ -166,6 +186,32 @@ public class Items {
 			output.accept(Items.BELL_COLLAR);
 		})
 		.build();
+
+		public static final ResourceKey<CreativeModeTab> DYED_TAB_KEY = ResourceKey.create(
+			BuiltInRegistries.CREATIVE_MODE_TAB.key(), Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "dyed_tab")
+		);
+
+		public static final CreativeModeTab DYED_TAB = FabricCreativeModeTab.builder()
+		.icon(() -> new ItemStack(Items.WHITE_DYED_CAT_TAIL))
+		.title(Component.translatable("creativeTab.pixton_dyed"))
+		.displayItems((params, output) -> {
+			output.accept(Items.WHITE_DYED_CAT_TAIL);
+			output.accept(Items.RED_DYED_CAT_TAIL);
+			output.accept(Items.ORANGE_DYED_CAT_TAIL);
+			output.accept(Items.YELLOW_DYED_CAT_TAIL);
+			output.accept(Items.LIME_DYED_CAT_TAIL);
+			output.accept(Items.GREEN_DYED_CAT_TAIL);
+			output.accept(Items.LIGHT_BLUE_DYED_CAT_TAIL);
+			output.accept(Items.CYAN_DYED_CAT_TAIL);
+			output.accept(Items.BLUE_DYED_CAT_TAIL);
+			output.accept(Items.PINK_DYED_CAT_TAIL);
+			output.accept(Items.MAGENTA_DYED_CAT_TAIL);
+			output.accept(Items.PURPLE_DYED_CAT_TAIL);
+			output.accept(Items.LIGHT_GRAY_DYED_CAT_TAIL);
+			output.accept(Items.GRAY_DYED_CAT_TAIL);
+			output.accept(Items.BROWN_DYED_CAT_TAIL);
+		})
+		.build();
 	
 		//public static final Item CAT_EARS = register(
 		//ItemIds.CAT_EARS,
@@ -177,5 +223,6 @@ public class Items {
     public static void initialize() {
         //CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register((creativeTab) -> creativeTab.accept(Items.CAT_EARS));
 		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, CUSTOM_CREATIVE_TAB_KEY, CUSTOM_CREATIVE_TAB);
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, DYED_TAB_KEY, DYED_TAB);
     }
 }

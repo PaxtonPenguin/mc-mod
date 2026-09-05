@@ -14,5 +14,9 @@
   "babysong": {
     "subtitle": "sound.pixton.babysong",
     "sounds": ["pixton:babysong"]
+  },
+  "bell": {
+    "subtitle": "sound.pixton.bell",
+    "sounds": ["pixton:bell1", "pixton:bell2", "pixton:bell3", "pixton:bell4", "pixton:bell5", "pixton:bell6"]
   }
 }

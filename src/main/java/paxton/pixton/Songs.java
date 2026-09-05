@@ -69,6 +69,8 @@ public class Songs {
 
    public static final Reference<SoundEvent> BABYSONG = registerForHolder("babysong");
 
+   public static final Reference<SoundEvent> BELL = registerForHolder("bell");
+
    public static void initialize() {
    }
 }

@@ -119,19 +119,19 @@ public class CatEars implements ModInitializer {
 					player.setAttached(Save.addedz, Math.abs(playerz) + addedz);
 					boolean freezey = player.getAttachedOrCreate(Save.freezey);
 					if (addedx >= 1.0) {
-						level.playSound(null, player.blockPosition(), SoundEvents.BELL_BLOCK, player.getSoundSource());
+						level.playSound(null, player.blockPosition(), Songs.BELL.value(), player.getSoundSource(), 0.5F, 1.0F);
 						player.setAttached(Save.addedx, 0.0);
 					}
 					if (addedz >= 1.0) {
-						level.playSound(null, player.blockPosition(), SoundEvents.BELL_BLOCK, player.getSoundSource());
+						level.playSound(null, player.blockPosition(), Songs.BELL.value(), player.getSoundSource(), 0.5F, 1.0F);
 						player.setAttached(Save.addedz, 0.0);
 					}
 					if (playery > 0.0 && freezey == false) {
-						level.playSound(null, player.blockPosition(), SoundEvents.BELL_BLOCK, player.getSoundSource());
+						level.playSound(null, player.blockPosition(), Songs.BELL.value(), player.getSoundSource(), 0.5F, 1.0F);
 						player.setAttached(Save.freezey, true);
 					}
 					if (playery == 0.0 && freezey == true) {
-						level.playSound(null, player.blockPosition(), SoundEvents.BELL_BLOCK, player.getSoundSource());
+						level.playSound(null, player.blockPosition(), Songs.BELL.value(), player.getSoundSource(), 0.5F, 1.0F);
 						player.setAttached(Save.freezey, false);
 					}
 				}
