@@ -14,7 +14,10 @@ import net.minecraft.resources.Identifier;
 
 public class KeyMappings implements ClientModInitializer{
     private net.minecraft.world.item.Items builtin;
-    KeyMapping.Category CATEGORY = KeyMapping.Category.register(
+
+        @Override
+        public void onInitializeClient() {
+			 KeyMapping.Category CATEGORY = KeyMapping.Category.register(
 			Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "custom_category"));
 			KeyMapping meow = KeyMappingHelper.registerKeyMapping(
 				new KeyMapping(
@@ -24,9 +27,6 @@ public class KeyMappings implements ClientModInitializer{
 					CATEGORY // The category of the mapping.
 				)
 			);
-
-        @Override
-        public void onInitializeClient() {
             ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			while (meow.consumeClick()) {
 				if (client.player != null) {

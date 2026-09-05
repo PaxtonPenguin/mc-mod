@@ -60,4 +60,6 @@ public class ItemIds {
 	public static final ResourceKey<Potion> BECOME_POTION = createpotion("becomepotion");
 
 	public static final ResourceKey<Item> COLLAR = create("collar");
+
+	public static final ResourceKey<Item> BELL_COLLAR = create("bell_collar");
 }

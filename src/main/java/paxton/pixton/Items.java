@@ -111,6 +111,8 @@ public class Items {
 
 	public static final CollarItem COLLAR = Registry.register(BuiltInRegistries.ITEM, ItemIds.COLLAR, new CollarItem());
 
+	public static final BellCollarItem BELL_COLLAR = Registry.register(BuiltInRegistries.ITEM, ItemIds.BELL_COLLAR, new BellCollarItem());
+
 	public static final Item BABY = register(ItemIds.BABY, Item::new, new Item.Properties().component(Components.TOOLTIP, new Tooltip("everything you do")));
 
 	public static final Holder<Potion> BECOME_POTION =
@@ -161,6 +163,7 @@ public class Items {
 			output.accept(Items.BABY);
 			output.accept(Blocks.BABY.asItem());
 			output.accept(Items.COLLAR);
+			output.accept(Items.BELL_COLLAR);
 		})
 		.build();
 	

@@ -40,5 +40,7 @@
   "item.minecraft.potion.effect.random": "Potion of Random Become",
   "item.minecraft.lingering_potion.effect.random": "Lingering Potion of Random Become",
   "item.minecraft.splash_potion.effect.random": "Splash Potion of Random Become",
-  "item.minecraft.tipped_arrow.effect.random": "Arrow of Random Become"
+  "item.minecraft.tipped_arrow.effect.random": "Arrow of Random Become",
+  "item.pixton.collar": "Collar",
+  "item.pixton.bell_collar": "Collar with a Bell"
 }

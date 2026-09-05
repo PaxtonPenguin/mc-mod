@@ -1,13 +1,6 @@
 package paxton.pixton;
 
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.equipment.ArmorType;
-import java.util.function.Supplier;
-import java.util.function.Consumer;
-
-import com.google.common.base.Suppliers;
 import com.mojang.blaze3d.vertex.PoseStack;
 
 import net.fabricmc.api.EnvType;
@@ -18,16 +11,9 @@ import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.entity.state.EntityRenderState;
 import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-
-import org.jetbrains.annotations.Nullable;
-
-import net.minecraft.world.item.equipment.ArmorMaterial;
-import eu.pb4.trinkets.api.SlotAttributes;
 import eu.pb4.trinkets.api.TrinketSlotAccess;
 import eu.pb4.trinkets.api.callback.*;
 import eu.pb4.trinkets.api.client.TrinketRenderer;
-import net.minecraft.core.Holder;
-import net.minecraft.world.entity.ai.attributes.*;
 import net.minecraft.resources.Identifier;
 
 import paxton.pixton.models.*;

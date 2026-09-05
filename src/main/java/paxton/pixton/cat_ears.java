@@ -1,6 +1,5 @@
 package paxton.pixton;
 
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -12,12 +11,9 @@ import net.minecraft.client.renderer.entity.state.EntityRenderState;
 import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 
-import eu.pb4.trinkets.api.SlotAttributes;
 import eu.pb4.trinkets.api.TrinketSlotAccess;
 import eu.pb4.trinkets.api.callback.*;
 import eu.pb4.trinkets.api.client.TrinketRenderer;
-import net.minecraft.core.Holder;
-import net.minecraft.world.entity.ai.attributes.*;
 import net.minecraft.resources.Identifier;
 import net.minecraft.client.model.*;
 

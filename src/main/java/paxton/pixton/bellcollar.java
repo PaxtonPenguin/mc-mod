@@ -19,9 +19,9 @@ import net.minecraft.resources.Identifier;
 
 import paxton.pixton.models.*;
 
-public class collar implements TrinketRenderer, TrinketCallback {
+public class bellcollar implements TrinketRenderer, TrinketCallback {
 		//private final Holder<Attribute> necklaceSlotModifier;
-		private static final Identifier TEXTURE = Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "textures/entity/trinket/collar.png");
+		private static final Identifier TEXTURE = Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "textures/entity/trinket/bellcollar.png");
 	private EntityModel<EntityRenderState> model;
 
 		@Override
@@ -41,7 +41,7 @@ public class collar implements TrinketRenderer, TrinketCallback {
 	private EntityModel<EntityRenderState> getModel() {
 		if (this.model == null) {
 			// Vanilla 1.17 uses EntityModels, EntityModelLoader and EntityModelLayers
-			this.model = new colar(colar.createBodyLayer().bakeRoot());
+			this.model = new bellcolar(bellcolar.createBodyLayer().bakeRoot());
 		}
 
 		return this.model;
