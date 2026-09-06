@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        "pixton:cat_ears",
+        "minecraft:yellow_dye"
+    ],
+    "result": {
+        "count": 1,
+        "id": "pixton:yellow_dyed_cat_tail"
+    }
+}

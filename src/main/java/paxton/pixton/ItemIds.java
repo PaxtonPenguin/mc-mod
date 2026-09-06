@@ -63,6 +63,8 @@ public class ItemIds {
 
 	public static final ResourceKey<Item> BELL_COLLAR = create("bell_collar");
 
+	//dyed
+
 	public static final ResourceKey<Item> WHITE_DYED_CAT_TAIL = create("white_dyed_cat_tail");
 
 	public static final ResourceKey<Item> BLACK_DYED_CAT_TAIL = create("black_dyed_cat_tail");
@@ -94,4 +96,21 @@ public class ItemIds {
 	public static final ResourceKey<Item> GRAY_DYED_CAT_TAIL = create("gray_dyed_cat_tail");
 
 	public static final ResourceKey<Item> LIGHT_GRAY_DYED_CAT_TAIL = create("light_gray_dyed_cat_tail");
+
+	public static final ResourceKey<Item> WHITE_DYED_CAT_EARS = create("white_dyed_cat_ears");
+	public static final ResourceKey<Item> RED_DYED_CAT_EARS = create("red_dyed_cat_ears");
+	public static final ResourceKey<Item> ORANGE_DYED_CAT_EARS = create("orange_dyed_cat_ears");
+	public static final ResourceKey<Item> YELLOW_DYED_CAT_EARS = create("yellow_dyed_cat_ears");
+	public static final ResourceKey<Item> LIME_DYED_CAT_EARS = create("lime_dyed_cat_ears");
+	public static final ResourceKey<Item> GREEN_DYED_CAT_EARS = create("green_dyed_cat_ears");
+	public static final ResourceKey<Item> LIGHT_BLUE_DYED_CAT_EARS = create("light_blue_dyed_cat_ears");
+	public static final ResourceKey<Item> CYAN_DYED_CAT_EARS = create("cyan_dyed_cat_ears");
+	public static final ResourceKey<Item> BLUE_DYED_CAT_EARS = create("blue_dyed_cat_ears");
+	public static final ResourceKey<Item> PINK_DYED_CAT_EARS = create("pink_dyed_cat_ears");
+	public static final ResourceKey<Item> MAGENTA_DYED_CAT_EARS = create("magenta_dyed_cat_ears");
+	public static final ResourceKey<Item> PURPLE_DYED_CAT_EARS = create("purple_dyed_cat_ears");
+	public static final ResourceKey<Item> LIGHT_GRAY_DYED_CAT_EARS = create("light_gray_dyed_cat_ears");
+	public static final ResourceKey<Item> GRAY_DYED_CAT_EARS = create("gray_dyed_cat_ears");
+	public static final ResourceKey<Item> BROWN_DYED_CAT_EARS = create("brown_dyed_cat_ears");
+	public static final ResourceKey<Item> BLACK_DYED_CAT_EARS = create("black_dyed_cat_ears");
 }

@@ -1,0 +1,16 @@
+    public static final WhiteCatEarsItem WHITE_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.WHITE_DYED_CAT_EARS, new WhiteCatEarsItem());
+public static final RedCatEarsItem RED_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.RED_DYED_CAT_EARS, new RedCatEarsItem());
+public static final OrangeCatEarsItem ORANGE_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.ORANGE_DYED_CAT_EARS, new OrangeCatEarsItem());
+public static final YellowCatEarsItem YELLOW_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.YELLOW_DYED_CAT_EARS, new YellowCatEarsItem());
+public static final LimeCatEarsItem LIME_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.LIME_DYED_CAT_EARS, new LimeCatEarsItem());
+public static final GreenCatEarsItem GREEN_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.GREEN_DYED_CAT_EARS, new GreenCatEarsItem());
+public static final LightBlueCatEarsItem LIGHT_BLUE_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.LIGHT_BLUE_DYED_CAT_EARS, new LightBlueCatEarsItem());
+public static final CyanCatEarsItem CYAN_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.CYAN_DYED_CAT_EARS, new CyanCatEarsItem());
+public static final BlueCatEarsItem BLUE_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.BLUE_DYED_CAT_EARS, new BlueCatEarsItem());
+public static final PinkCatEarsItem PINK_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.PINK_DYED_CAT_EARS, new PinkCatEarsItem());
+public static final MagentaCatEarsItem MAGENTA_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.MAGENTA_DYED_CAT_EARS, new MagentaCatEarsItem());
+public static final PurpleCatEarsItem PURPLE_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.PURPLE_DYED_CAT_EARS, new PurpleCatEarsItem());
+public static final LightGrayCatEarsItem LIGHT_GRAY_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.LIGHT_GRAY_DYED_CAT_EARS, new LightGrayCatEarsItem());
+public static final GrayCatEarsItem GRAY_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.GRAY_DYED_CAT_EARS, new GrayCatEarsItem());
+public static final BrownCatEarsItem BROWN_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.BROWN_DYED_CAT_EARS, new BrownCatEarsItem());
+public static final BlackCatEarsItem BLACK_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.BLACK_DYED_CAT_EARS, new BlackCatEarsItem());

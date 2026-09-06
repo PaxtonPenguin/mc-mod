@@ -1,0 +1,16 @@
+			output.accept(Items.WHITE_DYED_CAT_EARS);
+output.accept(Items.RED_DYED_CAT_EARS);
+output.accept(Items.ORANGE_DYED_CAT_EARS);
+output.accept(Items.YELLOW_DYED_CAT_EARS);
+output.accept(Items.LIME_DYED_CAT_EARS);
+output.accept(Items.GREEN_DYED_CAT_EARS);
+output.accept(Items.LIGHT_BLUE_DYED_CAT_EARS);
+output.accept(Items.CYAN_DYED_CAT_EARS);
+output.accept(Items.BLUE_DYED_CAT_EARS);
+output.accept(Items.PINK_DYED_CAT_EARS);
+output.accept(Items.MAGENTA_DYED_CAT_EARS);
+output.accept(Items.PURPLE_DYED_CAT_EARS);
+output.accept(Items.LIGHT_GRAY_DYED_CAT_EARS);
+output.accept(Items.GRAY_DYED_CAT_EARS);
+output.accept(Items.BROWN_DYED_CAT_EARS);
+output.accept(Items.BLACK_DYED_CAT_EARS);

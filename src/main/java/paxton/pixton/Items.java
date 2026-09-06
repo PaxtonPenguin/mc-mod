@@ -24,6 +24,7 @@ import net.minecraft.util.Unit;
 import net.minecraft.world.item.alchemy.Potion;
 
 import paxton.pixton.dyed.cat_tails.items.*;
+import paxton.pixton.dyed.cat_ears.items.*;
 
 public class Items {
     public static Item register(ResourceKey<Item> itemKey, Function<Item.Properties, Item> itemFactory, Item.Properties settings) {
@@ -103,7 +104,7 @@ public class Items {
 
 	public static final Item BLACK_CAT_EARS = register(ItemIds.BLACK_CAT_EARS, properties -> new black_cat_ears(Material.INSTANCE, ArmorType.HELMET, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("mrrp :3")).component(DataComponents.UNBREAKABLE, Unit.INSTANCE));
 
-	public static final Item FOP_EARS = register(ItemIds.FOP_EARS, properties -> new fop_ears(Material.INSTANCE, ArmorType.HELMET, properties), new Item.Properties().component(Components.TOOLTIP, new Tooltip("fun fact: you can bind animal noises")).component(DataComponents.UNBREAKABLE, Unit.INSTANCE));
+	public static final FopEarsItem FOP_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.FOP_EARS, new FopEarsItem());//, new Item.Properties().component(Components.TOOLTIP, new Tooltip("fun fact: you can bind animal noises")).component(DataComponents.UNBREAKABLE, Unit.INSTANCE));
 
 	public static final CatTailItem CAT_TAIL = Registry.register(BuiltInRegistries.ITEM, ItemIds.CAT_TAIL, new CatTailItem());
 
@@ -147,6 +148,23 @@ public class Items {
 	public static final GrayCatTailItem GRAY_DYED_CAT_TAIL = Registry.register(BuiltInRegistries.ITEM, ItemIds.GRAY_DYED_CAT_TAIL, new GrayCatTailItem());
 	public static final LightGrayCatTailItem LIGHT_GRAY_DYED_CAT_TAIL = Registry.register(BuiltInRegistries.ITEM, ItemIds.LIGHT_GRAY_DYED_CAT_TAIL, new LightGrayCatTailItem());
 	public static final BrownCatTailItem BROWN_DYED_CAT_TAIL = Registry.register(BuiltInRegistries.ITEM, ItemIds.BROWN_DYED_CAT_TAIL, new BrownCatTailItem());
+
+	public static final WhiteCatEarsItem WHITE_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.WHITE_DYED_CAT_EARS, new WhiteCatEarsItem());
+	public static final RedCatEarsItem RED_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.RED_DYED_CAT_EARS, new RedCatEarsItem());
+	public static final OrangeCatEarsItem ORANGE_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.ORANGE_DYED_CAT_EARS, new OrangeCatEarsItem());
+	public static final YellowCatEarsItem YELLOW_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.YELLOW_DYED_CAT_EARS, new YellowCatEarsItem());
+	public static final LimeCatEarsItem LIME_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.LIME_DYED_CAT_EARS, new LimeCatEarsItem());
+	public static final GreenCatEarsItem GREEN_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.GREEN_DYED_CAT_EARS, new GreenCatEarsItem());
+	public static final LightBlueCatEarsItem LIGHT_BLUE_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.LIGHT_BLUE_DYED_CAT_EARS, new LightBlueCatEarsItem());
+	public static final CyanCatEarsItem CYAN_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.CYAN_DYED_CAT_EARS, new CyanCatEarsItem());
+	public static final BlueCatEarsItem BLUE_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.BLUE_DYED_CAT_EARS, new BlueCatEarsItem());
+	public static final PinkCatEarsItem PINK_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.PINK_DYED_CAT_EARS, new PinkCatEarsItem());
+	public static final MagentaCatEarsItem MAGENTA_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.MAGENTA_DYED_CAT_EARS, new MagentaCatEarsItem());
+	public static final PurpleCatEarsItem PURPLE_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.PURPLE_DYED_CAT_EARS, new PurpleCatEarsItem());
+	public static final LightGrayCatEarsItem LIGHT_GRAY_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.LIGHT_GRAY_DYED_CAT_EARS, new LightGrayCatEarsItem());
+	public static final GrayCatEarsItem GRAY_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.GRAY_DYED_CAT_EARS, new GrayCatEarsItem());
+	public static final BrownCatEarsItem BROWN_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.BROWN_DYED_CAT_EARS, new BrownCatEarsItem());
+	public static final BlackCatEarsItem BLACK_DYED_CAT_EARS = Registry.register(BuiltInRegistries.ITEM, ItemIds.BLACK_DYED_CAT_EARS, new BlackCatEarsItem());
 
 	public static final ResourceKey<CreativeModeTab> CUSTOM_CREATIVE_TAB_KEY = ResourceKey.create(
 		BuiltInRegistries.CREATIVE_MODE_TAB.key(), Identifier.fromNamespaceAndPath(CatEars.MOD_ID, "creative_tab")
@@ -195,6 +213,22 @@ public class Items {
 		.icon(() -> new ItemStack(Items.WHITE_DYED_CAT_TAIL))
 		.title(Component.translatable("creativeTab.pixton_dyed"))
 		.displayItems((params, output) -> {
+			output.accept(Items.WHITE_DYED_CAT_EARS);
+			output.accept(Items.RED_DYED_CAT_EARS);
+			output.accept(Items.ORANGE_DYED_CAT_EARS);
+			output.accept(Items.YELLOW_DYED_CAT_EARS);
+			output.accept(Items.LIME_DYED_CAT_EARS);
+			output.accept(Items.GREEN_DYED_CAT_EARS);
+			output.accept(Items.LIGHT_BLUE_DYED_CAT_EARS);
+			output.accept(Items.CYAN_DYED_CAT_EARS);
+			output.accept(Items.BLUE_DYED_CAT_EARS);
+			output.accept(Items.PINK_DYED_CAT_EARS);
+			output.accept(Items.MAGENTA_DYED_CAT_EARS);
+			output.accept(Items.PURPLE_DYED_CAT_EARS);
+			output.accept(Items.LIGHT_GRAY_DYED_CAT_EARS);
+			output.accept(Items.GRAY_DYED_CAT_EARS);
+			output.accept(Items.BROWN_DYED_CAT_EARS);
+			output.accept(Items.BLACK_DYED_CAT_EARS);
 			output.accept(Items.WHITE_DYED_CAT_TAIL);
 			output.accept(Items.RED_DYED_CAT_TAIL);
 			output.accept(Items.ORANGE_DYED_CAT_TAIL);

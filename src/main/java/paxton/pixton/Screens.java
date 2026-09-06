@@ -1,6 +1,22 @@
 package paxton.pixton;
 
 import net.minecraft.client.gui.screens.MenuScreens;
+import paxton.pixton.dyed.cat_ears.renderers.black_dye_cat_ears;
+import paxton.pixton.dyed.cat_ears.renderers.blue_dye_cat_ears;
+import paxton.pixton.dyed.cat_ears.renderers.brown_dye_cat_ears;
+import paxton.pixton.dyed.cat_ears.renderers.cyan_dye_cat_ears;
+import paxton.pixton.dyed.cat_ears.renderers.gray_dye_cat_ears;
+import paxton.pixton.dyed.cat_ears.renderers.green_dye_cat_ears;
+import paxton.pixton.dyed.cat_ears.renderers.light_blue_dye_cat_ears;
+import paxton.pixton.dyed.cat_ears.renderers.light_gray_dye_cat_ears;
+import paxton.pixton.dyed.cat_ears.renderers.lime_dye_cat_ears;
+import paxton.pixton.dyed.cat_ears.renderers.magenta_dye_cat_ears;
+import paxton.pixton.dyed.cat_ears.renderers.orange_dye_cat_ears;
+import paxton.pixton.dyed.cat_ears.renderers.pink_dye_cat_ears;
+import paxton.pixton.dyed.cat_ears.renderers.purple_dye_cat_ears;
+import paxton.pixton.dyed.cat_ears.renderers.red_dye_cat_ears;
+import paxton.pixton.dyed.cat_ears.renderers.white_dye_cat_ears;
+import paxton.pixton.dyed.cat_ears.renderers.yellow_dye_cat_ears;
 import paxton.pixton.dyed.cat_tails.renderers.*;
 import eu.pb4.trinkets.api.client.TrinketRendererRegistry;
 import net.fabricmc.api.ClientModInitializer;
@@ -22,6 +38,8 @@ public class Screens implements ClientModInitializer {
 		TrinketRendererRegistry.registerRenderer(Items.COLLAR, collar);
 		bellcollar bellcollar = new bellcollar();
 		TrinketRendererRegistry.registerRenderer(Items.BELL_COLLAR, bellcollar);
+		fop_ears fop_ears = new fop_ears();
+		TrinketRendererRegistry.registerRenderer(Items.FOP_EARS, fop_ears);
 
 		black_dye_cat_tail black_dye_cat_tail = new black_dye_cat_tail();
 		TrinketRendererRegistry.registerRenderer(Items.BLACK_DYED_CAT_TAIL, black_dye_cat_tail);
@@ -55,5 +73,38 @@ public class Screens implements ClientModInitializer {
 		TrinketRendererRegistry.registerRenderer(Items.BROWN_DYED_CAT_TAIL, brown_dye_cat_tail);
 		white_dye_cat_tail white_dye_cat_tail = new white_dye_cat_tail();
 		TrinketRendererRegistry.registerRenderer(Items.WHITE_DYED_CAT_TAIL, white_dye_cat_tail);
+
+		white_dye_cat_ears white_dye_cat_ears = new white_dye_cat_ears();
+TrinketRendererRegistry.registerRenderer(Items.WHITE_DYED_CAT_EARS, white_dye_cat_ears);
+red_dye_cat_ears red_dye_cat_ears = new red_dye_cat_ears();
+TrinketRendererRegistry.registerRenderer(Items.RED_DYED_CAT_EARS, red_dye_cat_ears);
+orange_dye_cat_ears orange_dye_cat_ears = new orange_dye_cat_ears();
+TrinketRendererRegistry.registerRenderer(Items.ORANGE_DYED_CAT_EARS, orange_dye_cat_ears);
+yellow_dye_cat_ears yellow_dye_cat_ears = new yellow_dye_cat_ears();
+TrinketRendererRegistry.registerRenderer(Items.YELLOW_DYED_CAT_EARS, yellow_dye_cat_ears);
+lime_dye_cat_ears lime_dye_cat_ears = new lime_dye_cat_ears();
+TrinketRendererRegistry.registerRenderer(Items.LIME_DYED_CAT_EARS, lime_dye_cat_ears);
+green_dye_cat_ears green_dye_cat_ears = new green_dye_cat_ears();
+TrinketRendererRegistry.registerRenderer(Items.GREEN_DYED_CAT_EARS, green_dye_cat_ears);
+light_blue_dye_cat_ears light_blue_dye_cat_ears = new light_blue_dye_cat_ears();
+TrinketRendererRegistry.registerRenderer(Items.LIGHT_BLUE_DYED_CAT_EARS, light_blue_dye_cat_ears);
+cyan_dye_cat_ears cyan_dye_cat_ears = new cyan_dye_cat_ears();
+TrinketRendererRegistry.registerRenderer(Items.CYAN_DYED_CAT_EARS, cyan_dye_cat_ears);
+blue_dye_cat_ears blue_dye_cat_ears = new blue_dye_cat_ears();
+TrinketRendererRegistry.registerRenderer(Items.BLUE_DYED_CAT_EARS, blue_dye_cat_ears);
+pink_dye_cat_ears pink_dye_cat_ears = new pink_dye_cat_ears();
+TrinketRendererRegistry.registerRenderer(Items.PINK_DYED_CAT_EARS, pink_dye_cat_ears);
+magenta_dye_cat_ears magenta_dye_cat_ears = new magenta_dye_cat_ears();
+TrinketRendererRegistry.registerRenderer(Items.MAGENTA_DYED_CAT_EARS, magenta_dye_cat_ears);
+purple_dye_cat_ears purple_dye_cat_ears = new purple_dye_cat_ears();
+TrinketRendererRegistry.registerRenderer(Items.PURPLE_DYED_CAT_EARS, purple_dye_cat_ears);
+light_gray_dye_cat_ears light_gray_dye_cat_ears = new light_gray_dye_cat_ears();
+TrinketRendererRegistry.registerRenderer(Items.LIGHT_GRAY_DYED_CAT_EARS, light_gray_dye_cat_ears);
+gray_dye_cat_ears gray_dye_cat_ears = new gray_dye_cat_ears();
+TrinketRendererRegistry.registerRenderer(Items.GRAY_DYED_CAT_EARS, gray_dye_cat_ears);
+brown_dye_cat_ears brown_dye_cat_ears = new brown_dye_cat_ears();
+TrinketRendererRegistry.registerRenderer(Items.BROWN_DYED_CAT_EARS, brown_dye_cat_ears);
+black_dye_cat_ears black_dye_cat_ears = new black_dye_cat_ears();
+TrinketRendererRegistry.registerRenderer(Items.BLACK_DYED_CAT_EARS, black_dye_cat_ears);
 	}
 }
