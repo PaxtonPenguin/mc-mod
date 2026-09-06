@@ -29,7 +29,7 @@ public class cat_ears implements TrinketRenderer, TrinketCallback {
 		if (state instanceof EntityRenderState bipedEntityRenderState) {
 			EntityModel<EntityRenderState> model = this.getModel();
 			model.setupAnim(bipedEntityRenderState);
-			if (model instanceof HeadedModel head) {
+			if (contextModel instanceof HeadedModel head) {
 				TrinketRenderer.translateToHead(matrices, head);
 			}
 			submit.submitModel(model, bipedEntityRenderState, matrices, model.renderType(TEXTURE), light, OverlayTexture.pack(OverlayTexture.u(0), OverlayTexture.v(false)), -1, null, state.outlineColor, null);

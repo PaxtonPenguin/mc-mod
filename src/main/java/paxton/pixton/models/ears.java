@@ -38,7 +38,7 @@ public class ears extends EntityModel<EntityRenderState> {
 		.texOffs(4, 9).addBox(-3.0F, -33.0F, 0.0F, 1.0F, 1.0F, 1.0F, new CubeDeformation(0.0F))
 		.texOffs(6, 0).addBox(1.0F, -33.0F, -1.0F, 1.0F, 1.0F, 2.0F, new CubeDeformation(0.0F))
 		.texOffs(6, 3).addBox(-2.0F, -33.0F, -1.0F, 1.0F, 1.0F, 2.0F, new CubeDeformation(0.0F))
-		.texOffs(6, 6).addBox(-3.0F, -34.0F, -1.0F, 1.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 24.0F, 0.0F, 0.0F, 0.0F, 0.0F));
+		.texOffs(6, 6).addBox(-3.0F, -34.0F, -1.0F, 1.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 28.0F, 0.0F, 0.0F, 0.0F, 0.0F));
 
 		return LayerDefinition.create(meshdefinition, 16, 16);
 	}

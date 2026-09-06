@@ -29,7 +29,7 @@ public class bellcolar extends EntityModel<EntityRenderState> {
 
 		PartDefinition bb_main = partdefinition.addOrReplaceChild("bb_main", CubeListBuilder.create().texOffs(0, 6).addBox(-2.0F, -24.0F, -3.0F, 4.0F, 2.0F, 1.0F, new CubeDeformation(0.0F))
 		.texOffs(0, 9).addBox(-2.0F, -24.0F, 2.0F, 4.0F, 2.0F, 1.0F, new CubeDeformation(0.0F))
-		.texOffs(10, 7).addBox(-1.0F, -22.0F, -3.0F, 2.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
+		.texOffs(10, 7).addBox(-1.0F, -22.0F, -3.0F, 2.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 17.0F, 2.5F));
 
 		PartDefinition cube_r1 = bb_main.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(0, 3).addBox(-5.0F, -2.0F, 1.0F, 6.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-4.0F, -22.0F, -2.0F, 0.0F, 1.5708F, 0.0F));
 

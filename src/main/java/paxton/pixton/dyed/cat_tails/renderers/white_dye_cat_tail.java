@@ -9,6 +9,7 @@ import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.entity.state.EntityRenderState;
+import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
 import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import eu.pb4.trinkets.api.TrinketSlotAccess;
@@ -28,8 +29,8 @@ public class white_dye_cat_tail implements TrinketRenderer, TrinketCallback {
 		if (state instanceof EntityRenderState bipedEntityRenderState) {
 			EntityModel<EntityRenderState> model = this.getModel();
 			model.setupAnim(bipedEntityRenderState);
-			if (model instanceof HumanoidModel body) {
-				TrinketRenderer.followBodyRotations(contextModel, body);
+			if (contextModel instanceof HumanoidModel body && state instanceof HumanoidRenderState human) {
+				TrinketRenderer.translateToChest(matrices, body, human);
 			}
 			submit.submitModel(model, bipedEntityRenderState, matrices, model.renderType(TEXTURE), light, OverlayTexture.pack(OverlayTexture.u(0), OverlayTexture.v(false)), -1, null, state.outlineColor, null);
 		}

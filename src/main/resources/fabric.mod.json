@@ -3,11 +3,12 @@
 	"id": "pixton",
 	"version": "${version}",
 	"name": "Paxton's Stuff",
-	"description": "This mod adds a bunch of furry related stuff, and some othet things.",
+	"description": "This mod adds a bunch of furry related stuff, and some other things.",
 	"authors": [
-		"PaxtonPenguin",
-		"3 other people for the 2 music discs",
-		"it's funnier to not credit them"
+		"PaxtonPenguin (aka me)",
+		"filmorae for the separate item and renderer solution to this mod not working on the server",
+		"sufraiseii/River for the sufraiseii block texture",
+		"3 other people for the 2 music discs (it's funnier to not credit them)"
 	],
 	"contact": {
 		"homepage": "https://paxtonpenguin.com/",

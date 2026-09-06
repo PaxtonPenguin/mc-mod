@@ -12,6 +12,7 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.client.renderer.entity.state.EntityRenderState;
+import net.minecraft.util.Mth;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 
@@ -32,8 +33,16 @@ public class tinkettailModel extends EntityModel<EntityRenderState> {
 
 		PartDefinition bb_main = partdefinition.addOrReplaceChild("bb_main", CubeListBuilder.create(), PartPose.offset(0.0F, 24.0F, 0.0F));
 
-		PartDefinition cube_r1 = bb_main.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(0, 0).addBox(-3.0F, -4.0F, -1.0F, 4.0F, 4.0F, 13.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(1.0F, -12.0F, -1.0F, -0.5236F, 0.0F, 0.0F));
+		PartDefinition cube_r1 = bb_main.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(0, 0).addBox(-3.0F, -4.0F, -1.0F, 4.0F, 4.0F, 13.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(1.0F, -18.0F, 2.0F, -0.5236F, 0.0F, 0.0F));
 
 		return LayerDefinition.create(meshdefinition, 64, 64);
+	}
+
+	public void setupAnim(EntityRenderState state) {
+		super.setupAnim(state);
+
+		float time = state.ageInTicks * 0.05f;
+
+		bb_main.yRot = Mth.sin(time * 2.0f) * 0.15f;
 	}
 }

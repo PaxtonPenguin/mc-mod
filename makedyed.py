@@ -6,8 +6,15 @@ itemscolors = ["WHITE", "RED", "ORANGE", "YELLOW", "LIME", "GREEN", "LIGHT_BLUE"
 
 animal = input("name of animal starting with uppercase letter? ")
 wearable = input("name of wearabletype starting with uppercase letter? ")
-ntype = animal + wearable
-type_ = animal.lower() + "_" + wearable.lower()
+if animal == "":
+    ntype = wearable
+    type_ = wearable.lower()
+elif wearable = "":
+    ntype = animal
+    type_ = animal.lower()
+else:
+    ntype = animal + wearable
+    type_ = animal.lower() + "_" + wearable.lower()
 typelower = ntype.lower()
 type_upper = type_.upper()
 
